@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:finapp/index.dart';
+
 import '../model/home_button.dart';
 
 class HomeIcons {
@@ -8,35 +10,25 @@ class HomeIcons {
     HomeIcon(
       name: "All",
       image: "image/home/Grid.png",
-      () {
-        log('tap');
-      },
+      routeName: RoutesName.allProduct,
     ),
     HomeIcon(
-      () {
-        log('tap');
-      },
+      routeName: '',
       name: "Electronics",
       image: "image/home/Electronics.png",
     ),
     HomeIcon(
-      () {
-        log('tap');
-      },
+      routeName: '',
       name: "Vehicle",
       image: "image/home/Vehicle.png",
     ),
     HomeIcon(
-      () {
-        log('tap');
-      },
+      routeName: '',
       name: "Insurance",
       image: "image/home/Insurance.png",
     ),
     HomeIcon(
-      () {
-        log('tap');
-      },
+      routeName: '',
       name: "Lifestyle",
       image: "image/home/Lifestyle.png",
     ),
@@ -46,35 +38,25 @@ class HomeIcons {
     HomeIcon(
       name: "Mobile",
       image: "image/home/mobile.png",
-      () {
-        log('tap');
-      },
+      routeName: '',
     ),
     HomeIcon(
-      () {
-        log('tap');
-      },
+      routeName: '',
       name: "Electricity",
       image: "image/home/Electricity.png",
     ),
     HomeIcon(
-      () {
-        log('tap');
-      },
+      routeName: '',
       name: "DTH",
       image: "image/home/DTH.png",
     ),
     HomeIcon(
-      () {
-        log('tap');
-      },
+      routeName: '',
       name: "Credit Card",
       image: "image/home/CreditICard.png",
     ),
     HomeIcon(
-      () {
-        log('tap');
-      },
+      routeName: '',
       name: "Gas",
       image: "image/home/Gas.png",
     ),

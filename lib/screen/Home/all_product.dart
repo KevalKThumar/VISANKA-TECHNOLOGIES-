@@ -16,7 +16,9 @@ class AllProducts extends StatelessWidget {
             child: Row(
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.popAndPushNamed(context, RoutesName.home);
+                  },
                   icon: const Icon(
                     Icons.arrow_back_rounded,
                     color: FinappColor.textColor,

@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                     (index) => topButton(
                           image: HomeIcons.home[index].image,
                           name: HomeIcons.home[index].name,
-                          onTap: HomeIcons.home[index].onTap,
+                          routeName: HomeIcons.home[index].routeName!,
                         )),
               ),
             ),
@@ -191,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                           (index) => topButton(
                                 image: HomeIcons.bill[index].image,
                                 name: HomeIcons.bill[index].name,
-                                onTap: HomeIcons.bill[index].onTap,
+                                routeName: HomeIcons.bill[index].routeName!,
                               )),
                     ),
                   ),
@@ -240,10 +240,15 @@ class _HomePageState extends State<HomePage> {
   Widget topButton({
     required String image,
     required String name,
-    required VoidCallback onTap,
+    required String? routeName,
   }) {
     return InkWell(
-      onTap: onTap,
+      onTap: () {
+        if (routeName != null) {
+          Navigator.pushNamed(context, routeName);
+        }
+        null;
+      },
       child: Column(
         children: [
           CircleAvatar(
