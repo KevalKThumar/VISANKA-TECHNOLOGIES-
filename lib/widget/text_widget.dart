@@ -19,11 +19,13 @@ class TextWidget extends StatelessWidget {
     return Text(
       title,
       style: TextStyle(
+        overflow: TextOverflow.visible,
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
         fontFamily: 'Outfit',
       ),
+      textAlign: TextAlign.center,
     );
   }
 }

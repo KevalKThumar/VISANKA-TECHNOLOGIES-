@@ -14,13 +14,15 @@ class MainApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => RegisterProvider()),
+        ChangeNotifierProvider(create: (_) => BottomNavBarProvider()),
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,
         ),
-        initialRoute: RoutesName.getStartedPage,
+        initialRoute: RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,
       ),
     );

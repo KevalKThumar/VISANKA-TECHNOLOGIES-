@@ -13,9 +13,26 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const RegisterPage(),
         );
+
+      case RoutesName.allProduct:
+        return MaterialPageRoute(
+          builder: (context) => const AllProducts(),
+        );
+      case RoutesName.account:
+        return MaterialPageRoute(
+          builder: (context) => const AccountPage(),
+        );
+      case RoutesName.offer:
+        return MaterialPageRoute(
+          builder: (context) => const OfferPage(),
+        );
+      case RoutesName.rewards:
+        return MaterialPageRoute(
+          builder: (context) => const RewardPage(),
+        );
       case RoutesName.home:
         return MaterialPageRoute(
-          builder: (context) => const Home(),
+          builder: (context) => const HomePage(),
         );
       default:
         return MaterialPageRoute(
@@ -25,7 +42,15 @@ class Routes {
                 title: const Text('Error'),
               ),
               body: Center(
-                child: Text('No Route defined for ${settings.name}'),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('No Route defined for ${settings.name}'),
+                    textButton("Go To Home Page", () {
+                      Navigator.pushReplacementNamed(context, RoutesName.home);
+                    }, Colors.red)
+                  ],
+                ),
               ),
             );
           },

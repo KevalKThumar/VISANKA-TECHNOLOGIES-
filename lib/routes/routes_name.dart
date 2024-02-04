@@ -9,5 +9,10 @@ class RoutesName {
 
   // home screen
   static const String home = 'home';
-  static const String youtube = 'youtube';
+  static const String allProduct = 'allProducts';
+  static const String account = 'account';
+  static const String offer = 'offer';
+  static const String rewards = 'rewards';
+  static const String scan = 'scan';
+
 }
