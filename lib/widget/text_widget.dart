@@ -7,12 +7,14 @@ class TextWidget extends StatelessWidget {
     required this.fontSize,
     required this.fontWeight,
     this.color = FinappColor.textColor,
+    this.textAlign = TextAlign.center,
   });
 
   final String title;
   final double fontSize;
   final FontWeight fontWeight;
   final Color color;
+  final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class TextWidget extends StatelessWidget {
         fontWeight: fontWeight,
         fontFamily: 'Outfit',
       ),
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
     );
   }
 }

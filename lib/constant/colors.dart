@@ -10,6 +10,7 @@ class FinappColor {
   static const Color noReddemedContainerColor =
       Color.fromARGB(255, 199, 244, 250);
   static const Color goldenColor = Color.fromARGB(255, 255, 187, 0);
-  static const Color errorColor = Color.fromARGB(255, 255, 0, 0);
+  static const Color errorColor = Color.fromARGB(255, 250, 105, 105);
   static const Color successColor = Color.fromARGB(255, 105, 209, 108);
+  static const Color userDpColor = Color.fromARGB(255, 98, 124, 144);
 }

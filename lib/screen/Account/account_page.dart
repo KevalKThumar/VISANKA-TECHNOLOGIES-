@@ -1,4 +1,6 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:finapp/constant/rating.dart';
 
 import '../../index.dart';
 
@@ -7,12 +9,169 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Home(
+    return Home(
+      isShowSearchBar: false,
       title: "Fin Account.",
-      child: Center(
-        child: TextWidget(
-            title: "Fin Account.", fontSize: 25, fontWeight: FontWeight.bold),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            // My Fin. Account
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 20),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: TextWidget(
+                  title: "My Fin. Account",
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            SizedBox(height: 10),
+
+            // Row For user name and details
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                // circular image
+                CircleAvatar(
+                  radius: 60,
+                  backgroundColor: FinappColor.userDpColor,
+                  child: Icon(Icons.person, size: 90, color: Colors.white),
+                ),
+                // Column
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // name
+                    TextWidget(
+                      title: "Thumar Keval",
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    // email
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.email_outlined,
+                          color: Colors.black,
+                          size: 18,
+                        ),
+                        SizedBox(width: 3),
+                        TextWidget(
+                          title: "thumarkeval12@gmail.com",
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ],
+                    ),
+                    // phone
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.phone,
+                          color: Colors.black,
+                          size: 18,
+                        ),
+                        SizedBox(width: 3),
+                        TextWidget(
+                          title: "+91 1234567890",
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ],
+                    ),
+                    // Editprofile text button navigat to Editprofile page
+                    textButton("Edit Profile", () {
+                      Navigator.pushReplacementNamed(context, RoutesName.editProfile);
+                    }, Colors.blue),
+                  ],
+                )
+              ],
+            ),
+
+            SizedBox(height: 20),
+
+            // Log out button with color FinAppColor.error
+
+            elevatedButton(
+              "Log Out",
+              () {},
+              MediaQuery.of(context).size.width - 70,
+              40,
+              Colors.white,
+              backgroundColor: FinappColor.errorColor,
+            ),
+
+            // Fin. Rating
+
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 20),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: TextWidget(
+                  title: "Fin. Rating",
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            // reusable row
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 18.0),
+              child: Column(
+                  children: List.generate(
+                Rating.ratingList.length,
+                (index) => TextNumberRow(
+                  title: Rating.ratingList[index].title,
+                  rating: Rating.ratingList[index].rating,
+                ),
+              )),
+            )
+          ],
+        ),
       ),
+    );
+  }
+}
+
+class TextNumberRow extends StatelessWidget {
+  const TextNumberRow({
+    super.key,
+    required this.title,
+    required this.rating,
+  });
+
+  final String title;
+  final String rating;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        // title
+        TextWidget(
+          title: title,
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
+        ),
+        SizedBox(width: 10),
+        // rating
+        TextWidget(
+          title: rating,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        )
+      ],
     );
   }
 }

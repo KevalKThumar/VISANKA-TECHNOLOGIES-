@@ -1,4 +1,4 @@
-import 'package:finapp/constant/rewards.dart';
+
 import 'package:finapp/index.dart';
 
 class RewardPage extends StatelessWidget {
@@ -7,6 +7,7 @@ class RewardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Home(
+        isShowSearchBar: false,
         title: "Fin Rewards.",
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -19,7 +20,7 @@ class RewardPage extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: TextWidget(
                     title: "My Rewards",
-                    fontSize: 20,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: FinappColor.textColor,
                   ),
@@ -37,7 +38,7 @@ class RewardPage extends StatelessWidget {
                       (index) {
                         return Padding(
                           padding: const EdgeInsets.only(
-                              bottom: 8.0, left: 8, right: 8),
+                              bottom: 8.0, left: 12, right: 2),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -59,7 +60,7 @@ class RewardPage extends StatelessWidget {
                       (index) {
                         return Padding(
                           padding: const EdgeInsets.only(
-                              bottom: 8.0, left: 8, right: 8),
+                              bottom: 8.0, right: 12, left: 2),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -106,7 +107,7 @@ class RewardPage extends StatelessWidget {
                       (index) {
                         return Padding(
                           padding: const EdgeInsets.only(
-                              bottom: 8.0, left: 8, right: 8),
+                              bottom: 8.0, right: 2, left: 12),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -128,7 +129,7 @@ class RewardPage extends StatelessWidget {
                       (index) {
                         return Padding(
                           padding: const EdgeInsets.only(
-                              bottom: 8.0, left: 8, right: 8),
+                              bottom: 8.0, right: 12, left: 2),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
