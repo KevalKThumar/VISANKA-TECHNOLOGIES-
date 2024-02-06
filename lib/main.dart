@@ -22,6 +22,10 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
         ),
+        title: 'FinApp',
+        routes: {
+          RoutesName.generalInsurance : (context) => const GeneralInsurance(),
+        },
         initialRoute: RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,
       ),

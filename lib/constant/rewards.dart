@@ -1,4 +1,4 @@
-import 'package:finapp/model/reward_container.dart';
+import 'package:finapp/model/reward_container_model.dart';
 
 class Rewards {
   static List<RewardContainer> myRewards = [

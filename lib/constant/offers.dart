@@ -1,4 +1,4 @@
-import 'package:finapp/model/offer_list.dart';
+import 'package:finapp/model/offer_list_model.dart';
 
 class Offer {
   static List<OfferList> offerList = [

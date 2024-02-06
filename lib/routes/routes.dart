@@ -2,6 +2,8 @@
 
 import '../../index.dart';
 
+
+
 class Routes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -54,10 +56,6 @@ class Routes {
       case RoutesName.insurance:
         return MaterialPageRoute(
           builder: (context) => const InsurancePage(),
-        );
-      case RoutesName.generalInsurance:
-        return MaterialPageRoute(
-          builder: (context) => const GeneralInsurance(),
         );
       case RoutesName.upipage:
         return MaterialPageRoute(

@@ -13,22 +13,22 @@ class HomeIcons {
       routeName: RoutesName.allProduct,
     ),
     HomeIcon(
-      routeName: '',
+      routeName: RoutesName.electronic,
       name: "Electronics",
       image: "image/home/Electronics.png",
     ),
     HomeIcon(
-      routeName: '',
+      routeName: RoutesName.vehicles,
       name: "Vehicle",
       image: "image/home/Vehicle.png",
     ),
     HomeIcon(
-      routeName: '',
+      routeName: RoutesName.insurance,
       name: "Insurance",
       image: "image/home/Insurance.png",
     ),
     HomeIcon(
-      routeName: '',
+      routeName: RoutesName.lifestyle,
       name: "Lifestyle",
       image: "image/home/Lifestyle.png",
     ),
@@ -59,6 +59,93 @@ class HomeIcons {
       routeName: '',
       name: "Gas",
       image: "image/home/Gas.png",
+    ),
+  ];
+  
+  static List<HomeIcon> favoriteBrands = [
+    // Home
+    HomeIcon(
+      name: "intel",
+      image: "image/product/intel.png",
+      routeName: '',
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Boat",
+      image: "image/product/boat.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "hp",
+      image: "image/product/hp.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "noise",
+      image: "image/product/noice.png",
+    ),
+    HomeIcon(
+      name: "intel",
+      image: "image/product/intel.png",
+      routeName: '',
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Boat",
+      image: "image/product/boat.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "hp",
+      image: "image/product/hp.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "noise",
+      image: "image/product/noice.png",
+    ),
+  ];
+  static List<HomeIcon> electricProducts = [
+    // Home
+    HomeIcon(
+      name: "Laptops",
+      image: "image/product/laptop.png",
+      routeName: '',
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Watches",
+      image: "image/product/watch.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Headphones",
+      image: "image/product/earbuds.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Computer Accessories",
+      image: "image/product/keyBoard.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Gaming Laptops",
+      image: "image/product/gamingLaptop.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Cameras",
+      image: "image/product/camera.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Tablets",
+      image: "image/product/laptop.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Speakers",
+      image: "image/product/speaker.png",
     ),
   ];
 }

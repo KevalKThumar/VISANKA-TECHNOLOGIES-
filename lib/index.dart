@@ -7,8 +7,9 @@ export 'package:finapp/routes/routes_name.dart';
 export 'package:finapp/viewModel/login_provider.dart';
 export 'package:finapp/viewModel/register_provider.dart';
 export 'viewModel/bottom_navbar.dart';
-export 'package:finapp/model/product_icon.dart';
-export '../model/home_button.dart';
+export 'package:finapp/model/product_icon_model.dart';
+export 'model/home_button_model.dart';
+export 'package:finapp/model/vehicles_model.dart';
 
 // screen
 export 'package:finapp/screen/Login/login_screen.dart';
@@ -52,3 +53,6 @@ export 'package:finapp/constant/homeicons.dart';
 export 'package:finapp/constant/rewards.dart';
 export 'package:finapp/constant/products.dart';
 export 'package:finapp/constant/offers.dart';
+export 'package:finapp/constant/rating.dart';
+export 'package:finapp/constant/vehicles.dart';
+
