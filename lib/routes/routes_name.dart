@@ -12,7 +12,6 @@ class RoutesName {
   static const String account = 'account';
   static const String offer = 'offer';
   static const String rewards = 'rewards';
-  static const String scan = 'scan';
   static const String editProfile = 'editProfile';
   static const String electronic = 'electronic';
   static const String vehicles = 'vehicles';

@@ -35,11 +35,11 @@ class AllProducts extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
 
             //  Products for you
 
-            ,
+            
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: Align(

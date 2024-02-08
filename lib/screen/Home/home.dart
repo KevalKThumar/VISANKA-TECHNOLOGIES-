@@ -1,18 +1,20 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
 
-
 import '../../index.dart';
 
 class Home extends StatefulWidget {
-  const Home(
-      {super.key,
-      required this.title,
-      required this.child,
-      this.isShowSearchBar = true});
+  const Home({
+    super.key,
+    required this.title,
+    required this.child,
+    this.isShowSearchBar = true,
+    this.isUPIpage = false,
+  });
 
   final String title;
   final Widget child;
   final bool isShowSearchBar;
+  final bool isUPIpage;
 
   @override
   State<Home> createState() => _HomeState();
@@ -25,7 +27,7 @@ class _HomeState extends State<Home> {
   final List pageList = [
     RoutesName.home,
     RoutesName.rewards,
-    RoutesName.scan,
+    RoutesName.upiSearch,
     RoutesName.offer,
     RoutesName.account,
   ];
@@ -35,9 +37,13 @@ class _HomeState extends State<Home> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(left: 10.0, right: 10, bottom: 14),
+        padding: widget.isUPIpage
+            ? EdgeInsets.zero
+            : const EdgeInsets.only(left: 10.0, right: 10, bottom: 14),
         child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
+          borderRadius: widget.isUPIpage
+              ? BorderRadius.zero
+              : const BorderRadius.all(Radius.circular(30)),
           child: Consumer<BottomNavBarProvider>(
             builder: (context, bottomNavBar, child) {
               return BottomNavigationBar(
@@ -49,8 +55,9 @@ class _HomeState extends State<Home> {
                   size: 30,
                 ),
                 selectedItemColor: FinappColor.textColor,
-                selectedLabelStyle:
-                    const TextStyle(fontWeight: FontWeight.w500),
+                selectedLabelStyle: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                ),
                 backgroundColor: FinappColor.appBarColor,
                 type: BottomNavigationBarType.fixed,
                 onTap: (value) {

@@ -26,6 +26,7 @@ class MainApp extends StatelessWidget {
         routes: {
           RoutesName.generalInsurance : (context) => const GeneralInsurance(),
           RoutesName.digitalCard : (context) => const DigitalCardPage(),
+          RoutesName.upiSearch : (context) => const UpiSearchPage(),
         },
         initialRoute: RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,
