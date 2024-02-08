@@ -89,7 +89,8 @@ class AccountPage extends StatelessWidget {
                     ),
                     // Editprofile text button navigat to Editprofile page
                     textButton("Edit Profile", () {
-                      Navigator.pushReplacementNamed(context, RoutesName.editProfile);
+                      Navigator.pushReplacementNamed(
+                          context, RoutesName.editProfile);
                     }, Colors.blue),
                   ],
                 )
@@ -128,50 +129,18 @@ class AccountPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18.0),
               child: Column(
-                  children: List.generate(
-                Rating.ratingList.length,
-                (index) => TextNumberRow(
-                  title: Rating.ratingList[index].title,
-                  rating: Rating.ratingList[index].rating,
+                children: List.generate(
+                  Rating.ratingList.length,
+                  (index) => TextNumberRow(
+                    title: Rating.ratingList[index].title,
+                    rating: Rating.ratingList[index].rating,
+                  ),
                 ),
-              )),
-            )
+              ),
+            ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class TextNumberRow extends StatelessWidget {
-  const TextNumberRow({
-    super.key,
-    required this.title,
-    required this.rating,
-  });
-
-  final String title;
-  final String rating;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        // title
-        TextWidget(
-          title: title,
-          fontSize: 20,
-          fontWeight: FontWeight.w500,
-        ),
-        SizedBox(width: 10),
-        // rating
-        TextWidget(
-          title: rating,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        )
-      ],
     );
   }
 }

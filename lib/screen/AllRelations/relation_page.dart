@@ -5,12 +5,43 @@ class RelationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Home(
+    return Home(
       title: "Fin Relations.",
-      child: TextWidget(
-        title: "Relations",
-        fontSize: 25,
-        fontWeight: FontWeight.bold,
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+            child: TextWidget(
+              title: "Our Product Offering",
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+
+          //Relation Details
+
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return EmiCountWidget(
+                  image: 'image/home/Loan.png',
+                  nameOfRelation: "Local - Printer",
+                  id: "123ABC456DEF78",
+                  totlaAmount: 100000,
+                  emiAmount: 10000,
+                  totalPaidAmount: 50000,
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      RoutesName.relationInDetails,
+                    );
+                  },
+                );
+              },
+              itemCount: 10,
+            ),
+          ),
+        ],
       ),
     );
   }

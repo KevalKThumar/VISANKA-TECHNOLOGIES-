@@ -48,103 +48,24 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {},
                       child: assetImage('image/home/UPILogo.png', 90)),
                   // card
-                  InkWell(
-                    onTap: () {},
-                    child: Stack(
-                      children: [
-                        assetImage('image/home/CardBG.png', 90),
-                        const Positioned(
-                          top: 8,
-                          left: 10,
-                          child: TextWidget(
-                            title: "Fin.",
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                  CreditCard(
+                    imageSize: 90,
+                    cvv: 123,
+                    lastFourNumberOfCard: 1234,
+                    nameOfCardHolder: "John Doe",
+                    expDate: "12/24",
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesName.digitalCard,
+                        arguments: DigitalCardArguments(
+                          "John Doe",
+                          1234,
+                          "12/24",
+                          123,
                         ),
-                        const Positioned(
-                          top: 30,
-                          left: 10,
-                          child: TextWidget(
-                            title: "Keval Thumar",
-                            fontSize: 8,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const Positioned(
-                          top: 40,
-                          left: 10,
-                          child: TextWidget(
-                            title: "**** **** **** 1234",
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const Positioned(
-                          top: 60,
-                          left: 10,
-                          child: TextWidget(
-                            title: "EXP DATE",
-                            fontSize: 7,
-                            fontWeight: FontWeight.bold,
-                            color: FinappColor.textfieldBorderColor,
-                          ),
-                        ),
-                        const Positioned(
-                          top: 70,
-                          left: 10,
-                          child: TextWidget(
-                            title: "09/26",
-                            fontSize: 8,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const Positioned(
-                          top: 60,
-                          left: 105,
-                          child: TextWidget(
-                            title: "CVV/CVC",
-                            fontSize: 7,
-                            fontWeight: FontWeight.bold,
-                            color: FinappColor.textfieldBorderColor,
-                          ),
-                        ),
-                        const Positioned(
-                          top: 70,
-                          left: 122,
-                          child: TextWidget(
-                            title: "123",
-                            fontSize: 8,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Positioned(
-                          top: 25,
-                          left: 105,
-                          child: assetImage(
-                            'image/home/Rectangle35.png',
-                            30,
-                          ),
-                        ),
-                        const Positioned(
-                          top: 7,
-                          left: 120,
-                          child: RotatedBox(
-                            quarterTurns: 25,
-                            child: FaIcon(
-                              FontAwesomeIcons.wifi,
-                              size: 11,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      );
+                    },
                   )
                 ],
               ),
@@ -235,8 +156,124 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
- 
 }
 
+class CreditCard extends StatelessWidget {
+  const CreditCard({
+    super.key,
+    required this.nameOfCardHolder,
+    required this.lastFourNumberOfCard,
+    required this.expDate,
+    required this.cvv,
+    required this.onTap,
+    required this.imageSize,
+  });
+  final String nameOfCardHolder;
+  final int lastFourNumberOfCard;
+  final String expDate;
+  final double cvv;
+  final VoidCallback onTap;
+  final double imageSize;
 
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Stack(
+        children: [
+          assetImage('image/home/CardBG.png', imageSize),
+          const Positioned(
+            top: 8,
+            left: 10,
+            child: TextWidget(
+              title: "Fin.",
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          Positioned(
+            top: 30,
+            left: 10,
+            child: TextWidget(
+              title: nameOfCardHolder,
+              fontSize: 8,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          Positioned(
+            top: 40,
+            left: 10,
+            child: TextWidget(
+              title: "**** **** **** $lastFourNumberOfCard",
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          const Positioned(
+            top: 60,
+            left: 10,
+            child: TextWidget(
+              title: "EXP DATE",
+              fontSize: 7,
+              fontWeight: FontWeight.bold,
+              color: FinappColor.textfieldBorderColor,
+            ),
+          ),
+          Positioned(
+            top: 70,
+            left: 10,
+            child: TextWidget(
+              title: expDate,
+              fontSize: 8,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          const Positioned(
+            top: 60,
+            left: 105,
+            child: TextWidget(
+              title: "CVV/CVC",
+              fontSize: 7,
+              fontWeight: FontWeight.bold,
+              color: FinappColor.textfieldBorderColor,
+            ),
+          ),
+          Positioned(
+            top: 70,
+            left: 122,
+            child: TextWidget(
+              title: cvv.toString(),
+              fontSize: 8,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          Positioned(
+            top: 25,
+            left: 105,
+            child: assetImage(
+              'image/home/Rectangle35.png',
+              30,
+            ),
+          ),
+          const Positioned(
+            top: 7,
+            left: 120,
+            child: RotatedBox(
+              quarterTurns: 25,
+              child: FaIcon(
+                FontAwesomeIcons.wifi,
+                size: 11,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

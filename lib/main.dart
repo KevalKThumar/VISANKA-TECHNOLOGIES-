@@ -25,6 +25,7 @@ class MainApp extends StatelessWidget {
         title: 'FinApp',
         routes: {
           RoutesName.generalInsurance : (context) => const GeneralInsurance(),
+          RoutesName.digitalCard : (context) => const DigitalCardPage(),
         },
         initialRoute: RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,

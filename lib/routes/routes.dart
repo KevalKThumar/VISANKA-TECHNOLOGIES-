@@ -77,10 +77,7 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const BillRechargePage(),
         );
-      case RoutesName.digitalCard:
-        return MaterialPageRoute(
-          builder: (context) => const DigitalCardPage(),
-        );
+    
       case RoutesName.relationInDetails:
         return MaterialPageRoute(
           builder: (context) => const RelationDetailPage(),

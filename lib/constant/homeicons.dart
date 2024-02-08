@@ -1,10 +1,12 @@
-
-
 import 'package:finapp/index.dart';
 
-
-
 class HomeIcons {
+  static List<HomeIcon> cardPage = [
+    HomeIcon(name: "PIN", image: "image/bill/Password.png", routeName: ""),
+    HomeIcon(name: "Freeze", image: "image/bill/Freeze.png", routeName: ""),
+    HomeIcon(name: "Sleep", image: "image/bill/Sleep.png", routeName: ""),
+  ];
+
   static List<HomeIcon> home = [
     // Home
     HomeIcon(
@@ -61,7 +63,7 @@ class HomeIcons {
       image: "image/home/Gas.png",
     ),
   ];
-  
+
   static List<HomeIcon> favoriteBrands = [
     // Home
     HomeIcon(
@@ -146,6 +148,39 @@ class HomeIcons {
       routeName: '',
       name: "Speakers",
       image: "image/product/speaker.png",
+    ),
+  ];
+  static List<HomeIcon> lifestyle = [
+    // Home
+    HomeIcon(
+      name: "Laptops",
+      image: "image/product/laptop.png",
+      routeName: '',
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Watches",
+      image: "image/product/watch.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Headphones",
+      image: "image/product/earbuds.png",
+    ),
+    HomeIcon(
+      name: "Laptops",
+      image: "image/product/laptop.png",
+      routeName: '',
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Watches",
+      image: "image/product/watch.png",
+    ),
+    HomeIcon(
+      routeName: '',
+      name: "Headphones",
+      image: "image/product/earbuds.png",
     ),
   ];
 }

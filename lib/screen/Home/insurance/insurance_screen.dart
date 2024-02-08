@@ -121,6 +121,7 @@ class InsurancePage extends StatelessWidget {
                                     title: "$id$index",
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
+                                    
                                   ),
                                 ],
                               ),

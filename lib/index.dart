@@ -30,6 +30,12 @@ export 'package:finapp/screen/BillAndRecharge/recharge_search_page.dart';
 export 'package:finapp/screen/DigitalCard/digital_card_page.dart';
 export 'package:finapp/screen/UpiPage/upi_page.dart';
 export 'package:finapp/screen/UpiPage/upi_search_page.dart';
+export 'package:finapp/screen/Account/account_edit_page.dart';
+export 'package:finapp/screen/Home/electronic_product.dart';
+export 'package:finapp/screen/Home/insurance/general_insurance.dart';
+export 'package:finapp/screen/Home/insurance/insurance_screen.dart';
+export 'package:finapp/screen/Home/lifestyle_screen.dart';
+export 'package:finapp/screen/Home/vehicles_scrren.dart';
 
 // widget
 export 'package:finapp/widget/text_filds.dart';
@@ -39,13 +45,8 @@ export 'package:finapp/widget/elevated_button.dart';
 export 'package:finapp/widget/text_widget.dart';
 export 'package:finapp/widget/post_card.dart';
 export 'package:finapp/widget/top_button.dart';
-export 'package:finapp/widget/emi_show_container.dart';      
-export 'package:finapp/screen/Account/account_edit_page.dart';
-export 'package:finapp/screen/Home/electronic_product.dart';
-export 'package:finapp/screen/Home/insurance/general_insurance.dart';
-export 'package:finapp/screen/Home/insurance/insurance_screen.dart';
-export 'package:finapp/screen/Home/lifestyle_screen.dart';
-export 'package:finapp/screen/Home/vehicles_scrren.dart';
+export 'package:finapp/widget/emi_show_container.dart';    
+export 'package:finapp/widget/text_number_row.dart';    
 
 // constant
 export 'package:finapp/constant/colors.dart';
