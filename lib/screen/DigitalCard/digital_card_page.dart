@@ -36,7 +36,7 @@ class DigitalCardPage extends StatelessWidget {
                     ),
                   ),
                   const TextWidget(
-                    title: "View Lifestyle Products",
+                    title: "Card details",
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                   ),

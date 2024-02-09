@@ -65,10 +65,7 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const UpiSearchPage(),
         );
-      case RoutesName.rechargeOption:
-        return MaterialPageRoute(
-          builder: (context) => const RechargeOption(),
-        );
+    
       case RoutesName.rechargeSearch:
         return MaterialPageRoute(
           builder: (context) => const RechargeSearchPage(),
@@ -76,11 +73,6 @@ class Routes {
       case RoutesName.billAndRecharge:
         return MaterialPageRoute(
           builder: (context) => const BillRechargePage(),
-        );
-    
-      case RoutesName.relationInDetails:
-        return MaterialPageRoute(
-          builder: (context) => const RelationDetailPage(),
         );
       case RoutesName.allRelation:
         return MaterialPageRoute(

@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:finapp/constant/rating.dart';
 
 import '../../index.dart';
 
@@ -132,8 +131,8 @@ class AccountPage extends StatelessWidget {
                 children: List.generate(
                   Rating.ratingList.length,
                   (index) => TextNumberRow(
-                    title: Rating.ratingList[index].title,
-                    rating: Rating.ratingList[index].rating,
+                    left: Rating.ratingList[index].title,
+                    right: Rating.ratingList[index].rating,
                   ),
                 ),
               ),

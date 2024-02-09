@@ -191,8 +191,8 @@ class GeneralInsurance extends StatelessWidget {
                     (index) => Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextNumberRow(
-                        title: Insurance.insuranceDetails[index].title,
-                        rating: Insurance.insuranceDetails[index].rating,
+                        left: Insurance.insuranceDetails[index].title,
+                        right: Insurance.insuranceDetails[index].rating,
                         fontSize: 14,
                       ),
                     ),

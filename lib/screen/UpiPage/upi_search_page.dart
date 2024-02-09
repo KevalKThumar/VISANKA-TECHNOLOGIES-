@@ -15,6 +15,14 @@ class UpiSearchPage extends StatefulWidget {
 class _UpiSearchPageState extends State<UpiSearchPage> {
   TextEditingController searchController = TextEditingController();
   FocusNode searchFocusNode = FocusNode();
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    searchFocusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Home(

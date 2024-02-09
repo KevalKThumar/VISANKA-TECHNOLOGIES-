@@ -97,7 +97,10 @@ class _HomePageState extends State<HomePage> {
                           color: FinappColor.appBarColor,
                         ),
                         const Spacer(),
-                        textButton("View all", () {}, FinappColor.goldenColor)
+                        textButton("View all", () {
+                          Navigator.pushNamed(
+                              context, RoutesName.billAndRecharge);
+                        }, FinappColor.goldenColor)
                       ],
                     ),
                   ),
@@ -110,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                           (index) => topButton(
                                 image: HomeIcons.bill[index].image,
                                 name: HomeIcons.bill[index].name,
-                                routeName: HomeIcons.bill[index].routeName!,
+                                routeName: RoutesName.rechargeSearch,
                                 context: context,
                               )),
                     ),
@@ -133,7 +136,9 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.w600,
                   ),
                   const Spacer(),
-                  textButton("View all", () {}, FinappColor.goldenColor)
+                  textButton("View all", () {
+                    Navigator.pushNamed(context, RoutesName.allRelation);
+                  }, FinappColor.goldenColor)
                 ],
               ),
             ),

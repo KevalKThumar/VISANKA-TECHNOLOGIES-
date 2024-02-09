@@ -20,7 +20,9 @@ class LifeStyle extends StatelessWidget {
                   IconButton(
                     onPressed: () {
                       Navigator.pushReplacementNamed(
-                          context, RoutesName.account);
+                        context,
+                        RoutesName.home,
+                      );
                     },
                     icon: const Icon(
                       Icons.arrow_back_rounded,

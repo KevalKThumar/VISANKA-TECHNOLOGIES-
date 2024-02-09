@@ -15,7 +15,6 @@ class MainApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => RegisterProvider()),
         ChangeNotifierProvider(create: (_) => BottomNavBarProvider()),
-
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -24,9 +23,11 @@ class MainApp extends StatelessWidget {
         ),
         title: 'FinApp',
         routes: {
-          RoutesName.generalInsurance : (context) => const GeneralInsurance(),
-          RoutesName.digitalCard : (context) => const DigitalCardPage(),
-          RoutesName.upiSearch : (context) => const UpiSearchPage(),
+          RoutesName.generalInsurance: (context) => const GeneralInsurance(),
+          RoutesName.digitalCard: (context) => const DigitalCardPage(),
+          RoutesName.upiSearch: (context) => const UpiSearchPage(),
+          RoutesName.relationInDetails: (context) => const RelationDetailPage(),
+          RoutesName.rechargeOption : (context) => const RechargeOption(),
         },
         initialRoute: RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,
