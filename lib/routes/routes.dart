@@ -1,85 +1,99 @@
-
+import 'package:flutter/cupertino.dart';
 
 import '../../index.dart';
-
-
 
 class Routes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RoutesName.login:
-        return MaterialPageRoute(builder: (context) => const LoginScreen());
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const LoginScreen(),
+        );
       case RoutesName.getStartedPage:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const GetStartedPage(),
         );
       case RoutesName.register:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const RegisterPage(),
         );
       case RoutesName.allProduct:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const AllProducts(),
         );
       case RoutesName.account:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const AccountPage(),
         );
       case RoutesName.offer:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const OfferPage(),
         );
       case RoutesName.rewards:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const RewardPage(),
         );
       case RoutesName.home:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const HomePage(),
         );
       case RoutesName.editProfile:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const AccountEditPage(),
         );
       case RoutesName.vehicles:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const VehiclesScreen(),
         );
       case RoutesName.electronic:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const ElectronicPage(),
         );
       case RoutesName.lifestyle:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const LifeStyle(),
         );
       case RoutesName.insurance:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const InsurancePage(),
         );
-      case RoutesName.upipage:
-        return MaterialPageRoute(
-          builder: (context) => const UpiPage(),
-        );
       case RoutesName.upiSearch:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const UpiSearchPage(),
         );
-    
+
       case RoutesName.rechargeSearch:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const RechargeSearchPage(),
         );
       case RoutesName.billAndRecharge:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const BillRechargePage(),
         );
       case RoutesName.allRelation:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) => const RelationPage(),
         );
       default:
-        return MaterialPageRoute(
+        return CupertinoPageRoute(
+          maintainState: false,
           builder: (context) {
             return Scaffold(
               appBar: AppBar(

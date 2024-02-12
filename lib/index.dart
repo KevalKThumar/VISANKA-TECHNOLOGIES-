@@ -20,7 +20,6 @@ export 'package:finapp/screen/Offer/offer_screen.dart';
 export 'package:finapp/screen/Rewards/rewards_screen.dart';
 export 'package:finapp/screen/Account/account_page.dart';
 export 'package:finapp/screen/Home/home_screen.dart';
-export 'package:finapp/screen/Scan/scan_screen.dart';
 export 'package:finapp/screen/Home/home.dart';
 export 'package:finapp/screen/AllRelations/relation_details.dart';
 export 'package:finapp/screen/AllRelations/relation_page.dart';

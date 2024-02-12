@@ -53,7 +53,7 @@ class _AccountEditPageState extends State<AccountEditPage> {
                   
                   IconButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(
+                      Navigator.popAndPushNamed(
                           context, RoutesName.account);
                     },
                     icon: const Icon(

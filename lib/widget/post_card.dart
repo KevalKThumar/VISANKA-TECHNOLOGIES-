@@ -22,7 +22,7 @@ class PoductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, routeName);
+        Navigator.pushReplacementNamed(context, routeName);
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

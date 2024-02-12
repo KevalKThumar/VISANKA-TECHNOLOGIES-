@@ -4,7 +4,7 @@ class DigitalCardArguments {
   final String nameOfCardHolder;
   final int lastFourNumberOfCard;
   final String expDate;
-  final double cvv;
+  final int cvv;
 
   DigitalCardArguments(
       this.nameOfCardHolder, this.lastFourNumberOfCard, this.expDate, this.cvv);
@@ -15,6 +15,8 @@ class DigitalCardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final args =
+        ModalRoute.of(context)!.settings.arguments as DigitalCardArguments;
     return Home(
       title: "FinCard.",
       child: SingleChildScrollView(
@@ -44,8 +46,53 @@ class DigitalCardPage extends StatelessWidget {
               ),
             ),
             InkWell(
+              key: const ObjectKey(12),
               onTap: () {},
-              child: assetImage('image/product/FinCard.png', 200),
+              child: Stack(
+                children: [
+                  assetImage('image/product/FinCard.png', 200),
+                  Positioned(
+                    top: 75,
+                    left: 23,
+                    child: TextWidget(
+                      title: args.nameOfCardHolder,
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Positioned(
+                    top: 100,
+                    left: 140,
+                    child: TextWidget(
+                      title: "${args.lastFourNumberOfCard}",
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Positioned(
+                    top: 155,
+                    left: 27,
+                    child: TextWidget(
+                      title: args.expDate,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Positioned(
+                    top: 155,
+                    left: 260,
+                    child: TextWidget(
+                      title: "${args.cvv}",
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
             Row(

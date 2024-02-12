@@ -28,6 +28,7 @@ class MainApp extends StatelessWidget {
           RoutesName.upiSearch: (context) => const UpiSearchPage(),
           RoutesName.relationInDetails: (context) => const RelationDetailPage(),
           RoutesName.rechargeOption : (context) => const RechargeOption(),
+          RoutesName.upipage : (context) => const UpiPage(),
         },
         initialRoute: RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,

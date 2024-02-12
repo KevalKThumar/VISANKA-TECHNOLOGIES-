@@ -50,7 +50,7 @@ class GeneralInsurance extends StatelessWidget {
                         backgroundColor: FinappColor.userDpColor,
                         radius: 28,
                         child: assetImage(
-                          'image/bill/Insurance.png',
+                          'image/home/Insurance.png',
                           45,
                         )),
                     // name and policy number or id

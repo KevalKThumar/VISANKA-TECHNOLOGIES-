@@ -14,6 +14,7 @@ class _UpiPageState extends State<UpiPage> {
   FocusNode amountFocusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
+    var args = ModalRoute.of(context)!.settings.arguments as PaymentArgument;
     return Home(
       isUPIpage: true,
       isShowSearchBar: false,
@@ -36,8 +37,8 @@ class _UpiPageState extends State<UpiPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   assetImage('image/bill/Logo.png', 20),
-                  const TextWidget(
-                    title: "ID:thumarkeval@okicici",
+                  TextWidget(
+                    title: "ID:${args.id}@okicici",
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -47,37 +48,59 @@ class _UpiPageState extends State<UpiPage> {
 
               SizedBox(height: 120),
 
-              Center(
-                child: Container(
-                  padding: EdgeInsets.only(left: 12),
-                  height: 100,
-                  child: TextFormField(
-                    textAlignVertical: TextAlignVertical.center,
-                    controller: amountController,
-                    focusNode: amountFocusNode,
-                    keyboardType: TextInputType.number,
-                    cursorColor: Colors.white,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
+              Container(
+                padding: EdgeInsets.only(left: 12),
+                height: 100,
+                child: TextFormField(
+                  textAlignVertical: TextAlignVertical.center,
+                  controller: amountController,
+                  focusNode: amountFocusNode,
+                  keyboardType: TextInputType.number,
+                  maxLength: 6,
+                  cursorColor: Colors.white,
+                  onChanged: (value) {
+                    if (value.length == 6) {
+                      amountFocusNode.unfocus();
+                    }
+                    amountController.text = value;
+                  },
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold),
+                  decoration: InputDecoration(
+                    prefix: Text(
+                      "₹ ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50,
+                      ),
+                    ),
+                    border: InputBorder.none,
+                    hintText: "0",
+                    hintStyle: TextStyle(
                         color: Colors.white,
                         fontSize: 50,
                         fontWeight: FontWeight.bold),
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width - 230),
-                      prefix: Text(
-                        "₹",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 50,
-                        ),
-                      ),
-                      border: InputBorder.none,
-                      hintText: "0",
-                      hintStyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold),
+                    counterText: '',
+                    contentPadding: EdgeInsets.only(
+                      left: amountController.text.isEmpty
+                          ? 120
+                          : amountController.text.length == 1
+                              ? 120
+                              : amountController.text.length == 2
+                                  ? 120
+                                  : amountController.text.length == 3
+                                      ? 110
+                                      : amountController.text.length == 4
+                                          ? 100
+                                          : amountController.text.length == 5
+                                              ? 90
+                                              : amountController.text.length ==
+                                                      6
+                                                  ? 80
+                                                  : 0,
                     ),
                   ),
                 ),
@@ -108,7 +131,7 @@ class _UpiPageState extends State<UpiPage> {
                     child: Align(
                       alignment: Alignment(-0.9, 0),
                       child: Icon(
-                        Icons.done,
+                        Icons.close,
                         color: Colors.white,
                         size: 40,
                       ),
@@ -119,7 +142,7 @@ class _UpiPageState extends State<UpiPage> {
                     child: Align(
                       alignment: Alignment(0.9, 0),
                       child: Icon(
-                        Icons.close,
+                        Icons.done,
                         color: Colors.white,
                         size: 40,
                       ),
@@ -130,24 +153,180 @@ class _UpiPageState extends State<UpiPage> {
                       showModalBottomSheet(
                         context: context,
                         builder: (context) {
-                          return Column(
-                            children: [
-                              
-                              Container(
-                                color: FinappColor.appBarColor,
-                                child: Center(
-                                  child: Text(
-                                    'Task Completed',
+                          return amountController.text.isNotEmpty
+                              ? Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.5,
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                      color: FinappColor.appBarColor,
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(20),
+                                        topRight: Radius.circular(20),
+                                      )),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 5),
+                                      assetImage('image/bill/Base.png', 4),
+                                      SizedBox(height: 40),
+                                      TextWidget(
+                                        title: args.name,
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                      TextWidget(
+                                        title: args.id,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color(0xFFFFFFFF).withOpacity(0.5),
+                                      ),
+                                      SizedBox(height: 20),
+                                      TextWidget(
+                                        title: "₹ ${amountController.text}",
+                                        fontSize: 50,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                      SizedBox(height: 10),
+                                      SizedBox(
+                                        height: 50,
+                                        child: OutlinedButton(
+                                          onPressed: () {
+                                            Navigator.popUntil(
+                                              context,
+                                              (route) => route.isFirst,
+                                            );
+                                          },
+                                          style: OutlinedButton.styleFrom(
+                                            shape: ContinuousRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(25)),
+                                            side: BorderSide(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          child: Text(
+                                            "Payement Cancel",
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                      // Elevated button
+                                      SizedBox(height: 20),
+                                      SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width -
+                                                60,
+                                        height: 40,
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor:
+                                                FinappColor.userDpColor,
+                                          ),
+                                          onPressed: () {},
+                                          child: Text(
+                                            "Confirm Payment",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 20),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          TextWidget(
+                                              title: "Powered by",
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white),
+                                          assetImage('image/bill/Logo.png', 10),
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                ),
-                              ),
-                            ],
-                          );
+                                )
+                              : ScaffoldMessenger(
+                                  child: Center(
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 150,
+                                      width: double.infinity,
+                                      margin: EdgeInsets.all(10),
+                                      padding: EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                          color: FinappColor.appBarColor,
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          border: Border.all(
+                                            color: FinappColor.appBarColor,
+                                            width: 2,
+                                            style: BorderStyle.solid,
+                                            strokeAlign:
+                                                BorderSide.strokeAlignInside,
+                                          ),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: FinappColor.appBarColor,
+                                              blurRadius: 6,
+                                              offset: Offset(0, 2),
+                                              spreadRadius: 1,
+                                              blurStyle: BlurStyle.normal,
+                                            )
+                                          ]),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Text(
+                                            "Please Enter Amount",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          // button try again
+                                          OutlinedButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            style: OutlinedButton.styleFrom(
+                                                shape:
+                                                    ContinuousRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    25,
+                                                  ),
+                                                ),
+                                                side: BorderSide(
+                                                  color: FinappColor.errorColor,
+                                                )),
+                                            child: Text(
+                                              "Try Again",
+                                              style: TextStyle(
+                                                color: FinappColor.errorColor,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
                         },
                       );
                     } else if (direction == DismissDirection.endToStart) {
-                      // Perform task when swiped to the left (e.g., delete)
-                      print('Task deleted!');
+                      Navigator.pop(context);
                     }
                   },
                   child: SizedBox(

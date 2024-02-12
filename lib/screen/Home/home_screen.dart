@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                           "John Doe",
                           1234,
                           "12/24",
-                          123,
+                          1233,
                         ),
                       );
                     },
@@ -154,7 +154,17 @@ class _HomePageState extends State<HomePage> {
               totlaAmount: 100000,
               emiAmount: 10000,
               totalPaidAmount: 50000,
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesName.upipage,
+                  arguments: PaymentArgument(
+                    100000 - 50000,
+                    "Local - Printer",
+                    "123ABC456DEF78",
+                  ),
+                );
+              },
             ),
           ],
         ),
@@ -176,7 +186,7 @@ class CreditCard extends StatelessWidget {
   final String nameOfCardHolder;
   final int lastFourNumberOfCard;
   final String expDate;
-  final double cvv;
+  final int cvv;
   final VoidCallback onTap;
   final double imageSize;
 
@@ -186,17 +196,7 @@ class CreditCard extends StatelessWidget {
       onTap: onTap,
       child: Stack(
         children: [
-          assetImage('image/home/CardBG.png', imageSize),
-          const Positioned(
-            top: 8,
-            left: 10,
-            child: TextWidget(
-              title: "Fin.",
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
+          assetImage('image/product/FinCard.png', imageSize),
           Positioned(
             top: 30,
             left: 10,
@@ -208,23 +208,13 @@ class CreditCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 40,
-            left: 10,
+            top: 45,
+            left: 63,
             child: TextWidget(
-              title: "**** **** **** $lastFourNumberOfCard",
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          const Positioned(
-            top: 60,
-            left: 10,
-            child: TextWidget(
-              title: "EXP DATE",
+              title: "$lastFourNumberOfCard",
               fontSize: 7,
               fontWeight: FontWeight.bold,
-              color: FinappColor.textfieldBorderColor,
+              color: Colors.white,
             ),
           ),
           Positioned(
@@ -232,49 +222,19 @@ class CreditCard extends StatelessWidget {
             left: 10,
             child: TextWidget(
               title: expDate,
-              fontSize: 8,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          const Positioned(
-            top: 60,
-            left: 105,
-            child: TextWidget(
-              title: "CVV/CVC",
               fontSize: 7,
               fontWeight: FontWeight.bold,
-              color: FinappColor.textfieldBorderColor,
+              color: Colors.white,
             ),
           ),
           Positioned(
             top: 70,
-            left: 122,
+            left: 120,
             child: TextWidget(
               title: cvv.toString(),
-              fontSize: 8,
+              fontSize: 7,
               fontWeight: FontWeight.bold,
               color: Colors.white,
-            ),
-          ),
-          Positioned(
-            top: 25,
-            left: 105,
-            child: assetImage(
-              'image/home/Rectangle35.png',
-              30,
-            ),
-          ),
-          const Positioned(
-            top: 7,
-            left: 120,
-            child: RotatedBox(
-              quarterTurns: 25,
-              child: FaIcon(
-                FontAwesomeIcons.wifi,
-                size: 11,
-                color: Colors.white,
-              ),
             ),
           ),
         ],

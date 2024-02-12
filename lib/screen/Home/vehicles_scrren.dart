@@ -18,7 +18,7 @@ class VehiclesScreen extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      Navigator.popAndPushNamed(context, RoutesName.home);
+                      Navigator.pop(context);
                     },
                     icon: const Icon(
                       Icons.arrow_back_rounded,

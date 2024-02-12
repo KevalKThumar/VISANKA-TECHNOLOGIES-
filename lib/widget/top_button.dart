@@ -9,7 +9,10 @@ Widget topButton({
   return InkWell(
     onTap: () {
       if (routeName != null) {
-        Navigator.pushNamed(context, routeName);
+        Navigator.pushNamed(
+          context,
+          routeName,
+        );
       }
       null;
     },

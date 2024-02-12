@@ -1,8 +1,10 @@
 import 'package:finapp/index.dart';
 
 class PaymentArgument {
+  final String name;
+  final String id;
   final double amount;
-  PaymentArgument(this.amount);
+  PaymentArgument(this.amount, this.name, this.id);
 }
 
 class UpiSearchPage extends StatefulWidget {
@@ -92,7 +94,15 @@ class _UpiSearchPageState extends State<UpiSearchPage> {
               itemBuilder: (context, index) {
                 return ListTile(
                   onTap: () {
-                    Navigator.pushNamed(context, RoutesName.upipage);
+                    Navigator.pushNamed(
+                      context,
+                      RoutesName.upipage,
+                      arguments: PaymentArgument(
+                        1000.0,
+                        "Keval Thumar",
+                        "thumarkeval12",
+                      ),
+                    );
                   },
                   title: const Text(
                     "User Name",
