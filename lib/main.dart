@@ -5,8 +5,21 @@ void main() {
   runApp(const MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  late String userType;
+
+  @override
+  void initState() {
+    userType = "admin";
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +43,8 @@ class MainApp extends StatelessWidget {
           RoutesName.rechargeOption: (context) => const RechargeOption(),
           RoutesName.upipage: (context) => const UpiPage(),
         },
-        initialRoute: RoutesName.home,
+        initialRoute:
+            userType == "admin" ? RoutesName.adminHomeScreen : RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,
       ),
     );

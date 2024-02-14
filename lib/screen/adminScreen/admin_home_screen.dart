@@ -6,10 +6,12 @@ import '../../index.dart';
 import 'manageusers/manage_user_screen.dart';
 
 class AdminHome extends StatefulWidget {
-  const AdminHome({super.key, this.child, required this.title});
+  const AdminHome({
+    super.key,
+    this.child,
+  });
 
   final Widget? child;
-  final String title;
 
   @override
   State<AdminHome> createState() => _AdminHomeState();
@@ -26,13 +28,24 @@ class _AdminHomeState extends State<AdminHome> {
     // admin profile
     const AdminProfile(),
   ];
+  final List pageTitle = [
+    // dashboard
+    "DashboardPage",
+    // manageusers
+    "ManageUser",
+    // loans application approval
+    "LoanApproveScreen",
+    // admin profile
+    "AdminProfile",
+  ];
 
   @override
   Widget build(BuildContext context) {
+    final bottomNavBar = Provider.of<BottomNavBarProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: TextWidget(
-          title: widget.title,
+          title: pageTitle[bottomNavBar.index],
           fontSize: 24,
           fontWeight: FontWeight.w600,
           color: Colors.white,

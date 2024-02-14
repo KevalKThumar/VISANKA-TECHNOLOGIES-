@@ -1,3 +1,5 @@
+import 'package:finapp/screen/adminScreen/admin_home_screen.dart';
+import 'package:finapp/screen/adminScreen/profile/admin_edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../index.dart';
@@ -75,7 +77,6 @@ class Routes {
           maintainState: false,
           builder: (context) => const UpiSearchPage(),
         );
-
       case RoutesName.rechargeSearch:
         return CupertinoPageRoute(
           maintainState: false,
@@ -91,6 +92,17 @@ class Routes {
           maintainState: false,
           builder: (context) => const RelationPage(),
         );
+      case RoutesName.adminHomeScreen:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const AdminHome(),
+        );
+      case RoutesName.admineditprofile:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const AdminEditProfile(),
+        );
+
       default:
         return CupertinoPageRoute(
           maintainState: false,

@@ -6,7 +6,7 @@ class RoutesName {
   static const String getStartedPage = 'getStartedPage';
   static const String otpVarify = 'otpVarify';
 
-  // home screen
+  // user home screen
   static const String home = 'home';
   static const String allProduct = 'allProducts';
   static const String account = 'account';
@@ -26,6 +26,17 @@ class RoutesName {
   static const String digitalCard = 'digitalCard';
   static const String upiSearch = 'upiSearch';
   static const String upipage = 'upipage';
+
+  // admin screen
+
+  static const String adminLogin = 'adminLogin';
+  static const String dashboard = 'dashboard';
+  static const String manageUser = 'manageUser';
+  static const String loanApprove = 'loanApprove';
+  static const String adminprofile = 'adminprofile';
+  static const String admineditprofile = 'admineditprofile';
+  static const String adminHomeScreen = 'adminHomeScreen';
+  
 
   
 }
