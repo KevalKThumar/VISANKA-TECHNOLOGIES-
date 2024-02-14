@@ -1,6 +1,6 @@
 
 
-import '../../index.dart';
+import '../../../index.dart';
 
 class AllProducts extends StatelessWidget {
   const AllProducts({super.key});

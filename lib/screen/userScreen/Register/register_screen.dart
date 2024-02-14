@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import '../../index.dart';
+import '../../../index.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

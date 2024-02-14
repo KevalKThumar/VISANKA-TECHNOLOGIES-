@@ -308,12 +308,12 @@ class _UpiPageState extends State<UpiPage> {
                                                   ),
                                                 ),
                                                 side: BorderSide(
-                                                  color: FinappColor.errorColor,
+                                                  color: FinappColor.errorColor ,
                                                 )),
                                             child: Text(
                                               "Try Again",
                                               style: TextStyle(
-                                                color: FinappColor.errorColor,
+                                                color: FinappColor.errorColor ,
                                                 fontSize: 20,
                                               ),
                                             ),

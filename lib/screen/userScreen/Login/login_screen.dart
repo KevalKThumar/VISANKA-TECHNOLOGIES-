@@ -1,4 +1,4 @@
-import '../../index.dart';
+import '../../../index.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
