@@ -1,5 +1,4 @@
 import 'package:finapp/index.dart';
-import 'package:finapp/screen/adminScreen/admin_home_screen.dart';
 
 class AdminEditProfile extends StatefulWidget {
   const AdminEditProfile({super.key});
