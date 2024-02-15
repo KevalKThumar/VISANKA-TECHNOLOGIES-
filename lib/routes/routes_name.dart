@@ -36,6 +36,14 @@ class RoutesName {
   static const String adminprofile = 'adminprofile';
   static const String admineditprofile = 'admineditprofile';
   static const String adminHomeScreen = 'adminHomeScreen';
+  static const String adminAddUser = 'adminAddUser';
+  static const String removeRestrictUser = 'removeRestrictUser';
+  static const String managers  = 'managers';
+  static const String adminAddManager = 'adminAddManager';
+  static const String removeRestrictManager = 'removeRestrictManager';
+  static const String salesExecutive = 'salesExecutive';
+  static const String adminAddsalesExecutive = 'adminAddsalesExecutive';
+  static const String removeRestrictsalesExecutive = 'removeRestrictsalesExecutive';
   
 
   

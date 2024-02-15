@@ -1,9 +1,6 @@
-import 'package:finapp/screen/adminScreen/home/dashboard_screen.dart';
-import 'package:finapp/screen/adminScreen/loanapprove/loan_approve_screen.dart';
-import 'package:finapp/screen/adminScreen/profile/admin_profile_screen.dart';
+
 
 import '../../index.dart';
-import 'manageusers/manage_user_screen.dart';
 
 class AdminHome extends StatefulWidget {
   const AdminHome({
@@ -32,7 +29,7 @@ class _AdminHomeState extends State<AdminHome> {
     // dashboard
     "DashboardPage",
     // manageusers
-    "ManageUser",
+    "Users",
     // loans application approval
     "LoanApproveScreen",
     // admin profile

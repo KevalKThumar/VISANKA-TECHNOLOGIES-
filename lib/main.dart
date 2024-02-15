@@ -8,16 +8,16 @@ void main() {
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
+  static late String userType;
   @override
   State<MainApp> createState() => _MainAppState();
 }
 
 class _MainAppState extends State<MainApp> {
-  late String userType;
 
   @override
   void initState() {
-    userType = "admin";
+    MainApp.userType = "admin";
     super.initState();
   }
 
@@ -44,7 +44,7 @@ class _MainAppState extends State<MainApp> {
           RoutesName.upipage: (context) => const UpiPage(),
         },
         initialRoute:
-            userType == "admin" ? RoutesName.adminHomeScreen : RoutesName.home,
+            MainApp.userType == "admin" ? RoutesName.adminHomeScreen : RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,
       ),
     );

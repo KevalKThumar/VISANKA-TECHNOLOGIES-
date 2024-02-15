@@ -14,14 +14,16 @@ class DashboardPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
+                    crossAxisCount: 1,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
+                    childAspectRatio: 1.5
                 ),
-                itemCount: 4,
+                itemCount: DashBoard.adminDashBoard.length,
                 itemBuilder: (context, index) {
                   return DashBoardCard(
                     title: DashBoard.adminDashBoard[index].name,
+                    routeName: DashBoard.adminDashBoard[index].routeName,
                   );
                 },
               ),
@@ -38,20 +40,25 @@ class DashBoardCard extends StatelessWidget {
     super.key,
     required this.title,
     this.image,
+    required this.routeName,
   });
   final String title;
   final String? image;
+  final String routeName;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: FinappColor.noReddemedContainerColor,
-      child: Container(
-        alignment: Alignment.center,
-        child: TextWidget(
-          title: title,
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, routeName),
+      child: Card(
+        color: FinappColor.noReddemedContainerColor,
+        child: Container(
+          alignment: Alignment.center,
+          child: TextWidget(
+            title: title,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

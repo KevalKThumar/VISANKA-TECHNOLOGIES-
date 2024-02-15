@@ -1,23 +1,15 @@
+import 'package:finapp/index.dart';
 import 'package:finapp/model/admin_dashboard_modal.dart';
 
 class DashBoard {
- static final List<AdminDashBoard> adminDashBoard = [
+  static final List<AdminDashBoard> adminDashBoard = [
     AdminDashBoard(
       name: "Managers",
-      image: "image/admin/manager.png",
+      routeName: RoutesName.managers,
     ),
     AdminDashBoard(
       name: "Sales exe",
-      image: "image/admin/sales.png",
+      routeName: RoutesName.salesExecutive,
     ),
-    AdminDashBoard(
-      name: "Users ",
-      image: "image/admin/product.png",
-    ),
-    AdminDashBoard(
-      name: "Loan",
-      image: "image/admin/Loan.png",
-    ),
-
   ];
 }

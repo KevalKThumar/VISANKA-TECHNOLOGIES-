@@ -1,6 +1,7 @@
 class AdminDashBoard{
   final String name;
-  final String image;
+  final String routeName;
 
-  AdminDashBoard({required this.name, required this.image});
+
+  AdminDashBoard({required this.name, required this.routeName});
 }

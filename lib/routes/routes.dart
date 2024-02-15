@@ -1,7 +1,5 @@
-import 'package:finapp/screen/adminScreen/admin_home_screen.dart';
-import 'package:finapp/screen/adminScreen/profile/admin_edit_profile.dart';
-import 'package:flutter/cupertino.dart';
 
+import 'package:flutter/cupertino.dart';
 import '../../index.dart';
 
 class Routes {
@@ -102,6 +100,47 @@ class Routes {
           maintainState: false,
           builder: (context) => const AdminEditProfile(),
         );
+      case RoutesName.adminAddUser:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const AdminAddUser(),
+        );
+      case RoutesName.removeRestrictUser:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const RemoveRestrictUser(),
+        );
+      case RoutesName.managers:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ManageManager(),
+        );
+        case RoutesName.adminAddManager:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const AdminAddManager(),
+        );
+      case RoutesName.removeRestrictManager:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const RemoveRestrictManager(),
+        );
+      case RoutesName.salesExecutive:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ManageSelesExecutive(),
+        );
+        case RoutesName.adminAddsalesExecutive:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const AdminAddSalesExecutive(),
+        );
+      case RoutesName.removeRestrictsalesExecutive:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const RemoveRestrictSalesExecutive(),
+        );
+        
 
       default:
         return CupertinoPageRoute(
@@ -117,7 +156,12 @@ class Routes {
                   children: [
                     Text('No Route defined for ${settings.name}'),
                     textButton("Go To Home Page", () {
-                      Navigator.pushReplacementNamed(context, RoutesName.home);
+                      Navigator.popAndPushNamed(
+                        context,
+                        MainApp.userType == "admin"
+                            ? RoutesName.adminHomeScreen
+                            : RoutesName.home,
+                      );
                     }, Colors.red)
                   ],
                 ),
