@@ -44,6 +44,11 @@ class RoutesName {
   static const String salesExecutive = 'salesExecutive';
   static const String adminAddsalesExecutive = 'adminAddsalesExecutive';
   static const String removeRestrictsalesExecutive = 'removeRestrictsalesExecutive';
+  static const String oneUserLoan =
+      'oneUserLoan';
+  static const String loanDetails =
+      'loanDetails';
+
   
 
   

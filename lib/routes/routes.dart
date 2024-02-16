@@ -1,4 +1,5 @@
-
+import 'package:finapp/screen/adminScreen/loanapprove/loan_details_screen.dart';
+import 'package:finapp/screen/adminScreen/loanapprove/one_user_loan_screen.dart';
 import 'package:flutter/cupertino.dart';
 import '../../index.dart';
 
@@ -115,7 +116,7 @@ class Routes {
           maintainState: false,
           builder: (context) => const ManageManager(),
         );
-        case RoutesName.adminAddManager:
+      case RoutesName.adminAddManager:
         return CupertinoPageRoute(
           maintainState: false,
           builder: (context) => const AdminAddManager(),
@@ -130,7 +131,7 @@ class Routes {
           maintainState: false,
           builder: (context) => const ManageSelesExecutive(),
         );
-        case RoutesName.adminAddsalesExecutive:
+      case RoutesName.adminAddsalesExecutive:
         return CupertinoPageRoute(
           maintainState: false,
           builder: (context) => const AdminAddSalesExecutive(),
@@ -140,7 +141,16 @@ class Routes {
           maintainState: false,
           builder: (context) => const RemoveRestrictSalesExecutive(),
         );
-        
+      case RoutesName.loanDetails:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const LoanDetails(),
+        );
+      case RoutesName.oneUserLoan:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const OneUserLoan(),
+        );
 
       default:
         return CupertinoPageRoute(

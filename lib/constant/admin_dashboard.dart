@@ -8,7 +8,7 @@ class DashBoard {
       routeName: RoutesName.managers,
     ),
     AdminDashBoard(
-      name: "Sales exe",
+      name: "Sales Executive",
       routeName: RoutesName.salesExecutive,
     ),
   ];
