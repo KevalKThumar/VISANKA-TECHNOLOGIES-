@@ -54,7 +54,86 @@ class _AdminHomeState extends State<AdminHome> {
             padding: const EdgeInsets.only(right: 20.0),
             child: InkWell(
               onTap: () {
-                // Navigator.pushNamed(context, RoutesName.adminLogin);
+                showGeneralDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  transitionDuration: const Duration(milliseconds: 500),
+                  barrierLabel: MaterialLocalizations.of(context).dialogLabel,
+                  barrierColor: Colors.black.withOpacity(0.5),
+                  pageBuilder: (context, _, __) => Container(
+                    color: Colors.transparent,
+                    child: Column(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height * 0.4,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(40),
+                              bottomRight: Radius.circular(40),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 50.0, horizontal: 20),
+                                child: const Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Icon(
+                                      Icons.notifications_none_rounded,
+                                      color: FinappColor.textColor,
+                                      size: 35,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    TextWidget(
+                                      fontSize: 25,
+                                      title: "Notification",
+                                      color: FinappColor.textColor,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              // List of notification
+                              Center(
+                                child: TextWidget(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w300,
+                                  title: "No notification",
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  transitionBuilder: (context, animation, _, child) {
+                    return SlideTransition(
+                      position: CurvedAnimation(
+                              parent: animation, curve: Curves.linearToEaseOut)
+                          .drive(Tween<Offset>(
+                              begin: Offset.zero, end: Offset.zero)),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Material(
+                            type: MaterialType.transparency,
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(10),
+                            clipBehavior: Clip.antiAlias,
+                            child: child,
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                );
               },
               child: const Icon(
                 Icons.notifications,
