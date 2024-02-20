@@ -12,4 +12,14 @@ class DashBoard {
       routeName: RoutesName.salesExecutive,
     ),
   ];
+  static final List<AdminDashBoard> managerDashBoard = [
+    AdminDashBoard(
+      name: "Sales Executive",
+      routeName: RoutesName.salesExecutiveList,
+    ),
+    AdminDashBoard(
+      name: "User's LoanApplication",
+      routeName: RoutesName.applideUserListScreen,
+    ),
+  ];
 }

@@ -14,10 +14,9 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-
   @override
   void initState() {
-    MainApp.userType = "admin";
+    MainApp.userType = "Manager";
     super.initState();
   }
 
@@ -43,8 +42,11 @@ class _MainAppState extends State<MainApp> {
           RoutesName.rechargeOption: (context) => const RechargeOption(),
           RoutesName.upipage: (context) => const UpiPage(),
         },
-        initialRoute:
-            MainApp.userType == "admin" ? RoutesName.adminHomeScreen : RoutesName.home,
+        initialRoute: MainApp.userType == "admin"
+            ? RoutesName.adminHomeScreen
+            : MainApp.userType == "Manager"
+                ? RoutesName.managerHomeScreen
+                : RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,
       ),
     );

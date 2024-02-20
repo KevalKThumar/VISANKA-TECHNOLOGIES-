@@ -28,9 +28,8 @@ class RoutesName {
   static const String upipage = 'upipage';
 
   // admin screen
-
   static const String adminLogin = 'adminLogin';
-  static const String dashboard = 'dashboard';
+  static const String admindashboard = 'admindashboard';
   static const String manageUser = 'manageUser';
   static const String loanApprove = 'loanApprove';
   static const String adminprofile = 'adminprofile';
@@ -44,10 +43,26 @@ class RoutesName {
   static const String salesExecutive = 'salesExecutive';
   static const String adminAddsalesExecutive = 'adminAddsalesExecutive';
   static const String removeRestrictsalesExecutive = 'removeRestrictsalesExecutive';
-  static const String oneUserLoan =
-      'oneUserLoan';
-  static const String loanDetails =
-      'loanDetails';
+  static const String oneUserLoan = 'oneUserLoan';
+  static const String loanDetails = 'loanDetails';
+
+  // manager screen
+  static const String managerLogin = 'managerLogin';
+  static const String managerHomeScreen = 'managerHomeScreen';
+  static const String managerdashboard = 'managerdashboard';
+  static const String managerProfile = 'managerProfile';
+  static const String managereditprofile = 'managereditprofile';
+  static const String salesExecutiveManageUser = 'salesExecutiveManageUser';
+  static const String salesExecutiveAdd = 'salesExecutiveAdd';
+  static const String salesExecutiveRemoveRestict = 'salesExecutiveRemoveRestict';
+  static const String salesExecutiveDetail = 'salesExecutiveDetail';
+  static const String salesExecutiveList = 'salesExecutiveList';
+  static const String removeRestrictUserBySalesExe = 'removeRestrictUserBySalesExe';
+  static const String applideUserListScreen = 'applideUserListScreen';
+  static const String approveOrRejectScreen = 'approveOrRejectScreen';
+
+  
+
 
   
 

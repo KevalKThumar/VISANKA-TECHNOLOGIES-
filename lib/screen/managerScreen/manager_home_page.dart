@@ -1,9 +1,9 @@
-
+import 'package:finapp/screen/managerScreen/home/dashboard_screen.dart';
 
 import '../../index.dart';
 
-class AdminHome extends StatefulWidget {
-  const AdminHome({
+class ManagerHomePage extends StatefulWidget {
+  const ManagerHomePage({
     super.key,
     this.child,
   });
@@ -11,29 +11,29 @@ class AdminHome extends StatefulWidget {
   final Widget? child;
 
   @override
-  State<AdminHome> createState() => _AdminHomeState();
+  State<ManagerHomePage> createState() => _ManagerHomePageState();
 }
 
-class _AdminHomeState extends State<AdminHome> {
+class _ManagerHomePageState extends State<ManagerHomePage> {
   final List pageList = [
     // dashboard
-    const DashboardPage(),
-    // manageusers
+    const ManagerDashboardPage(),
+    // addSalesExecutive
     const ManageUser(),
     // loans application approval
     const LoanApproveScreen(),
     // admin profile
-    const AdminProfile(),
+    const ManagerProfle(),
   ];
   final List pageTitle = [
     // dashboard
     "DashboardPage",
     // manageusers
-    "Users",
+    "UsersList",
     // loans application approval
     "LoanApproveScreen",
-    // admin profile
-    "AdminProfile",
+    // manager profile
+    "ManagerProfle",
   ];
 
   @override

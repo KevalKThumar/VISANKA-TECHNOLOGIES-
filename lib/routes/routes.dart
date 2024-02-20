@@ -1,11 +1,19 @@
-import 'package:finapp/screen/adminScreen/loanapprove/loan_details_screen.dart';
-import 'package:finapp/screen/adminScreen/loanapprove/one_user_loan_screen.dart';
+
+import 'package:finapp/screen/managerScreen/addRemoveSalesExe/detail_salesexe_screen.dart';
+import 'package:finapp/screen/managerScreen/addRemoveSalesExe/list_salesexe_screen.dart';
+import 'package:finapp/screen/managerScreen/manageLoan/applied_user_list_screen.dart';
+import 'package:finapp/screen/managerScreen/manageLoan/approve_reject_screen.dart';
+import 'package:finapp/screen/managerScreen/manager_home_page.dart';
+import 'package:finapp/screen/managerScreen/profile/manager_edit_profile_screen.dart';
+import 'package:finapp/screen/managerScreen/user/remove_restrict_user.dart';
 import 'package:flutter/cupertino.dart';
 import '../../index.dart';
+import '../screen/managerScreen/home/dashboard_screen.dart';
 
 class Routes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+      // user
       case RoutesName.login:
         return CupertinoPageRoute(
           maintainState: false,
@@ -91,6 +99,7 @@ class Routes {
           maintainState: false,
           builder: (context) => const RelationPage(),
         );
+        // admin
       case RoutesName.adminHomeScreen:
         return CupertinoPageRoute(
           maintainState: false,
@@ -150,6 +159,57 @@ class Routes {
         return CupertinoPageRoute(
           maintainState: false,
           builder: (context) => const OneUserLoan(),
+        );
+        //ANCHOR - Manager
+      case RoutesName.managerdashboard:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ManagerDashboardPage(),
+        );
+      case RoutesName.managerProfile:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ManagerProfle(),
+        );
+      case RoutesName.managereditprofile:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ManagerEditProfile(),
+        );
+      case RoutesName.salesExecutiveAdd:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ManagerEditProfile(),
+        );
+      case RoutesName.salesExecutiveRemoveRestict:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const SalesExecutiveRemoveRestict(),
+        );
+      case RoutesName.salesExecutiveList:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ListOfSelesExecutive(),
+        );
+      case RoutesName.removeRestrictUserBySalesExe:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const RemoveRestrictUserBySalesExe(),
+        );
+      case RoutesName.applideUserListScreen:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const AppliedUserList(),
+        );
+      case RoutesName.approveOrRejectScreen:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ApproveReject(),
+        );
+      case RoutesName.managerHomeScreen:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ManagerHomePage(),
         );
 
       default:

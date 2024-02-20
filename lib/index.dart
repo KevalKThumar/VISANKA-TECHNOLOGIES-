@@ -50,6 +50,9 @@ export 'package:finapp/screen/userScreen/Home/insurance/general_insurance.dart';
 export 'package:finapp/screen/userScreen/Home/insurance/insurance_screen.dart';
 export 'package:finapp/screen/userScreen/Home/lifestyle_screen.dart';
 export 'package:finapp/screen/userScreen/Home/vehicles_scrren.dart';
+export 'package:finapp/screen/adminScreen/loanapprove/loan_details_screen.dart';
+export 'package:finapp/screen/adminScreen/loanapprove/one_user_loan_screen.dart';
+export '../screen/managerScreen/profile/manager_profile_screen.dart';
 
 // widget
 export 'package:finapp/widget/text_filds.dart';
