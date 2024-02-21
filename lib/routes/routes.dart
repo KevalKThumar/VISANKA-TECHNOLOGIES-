@@ -1,6 +1,11 @@
-
-
 import 'package:finapp/screen/managerScreen/home/dashboard_screen.dart';
+import 'package:finapp/screen/salesExecutiveScreen/dashboard/loanRejection/loan_rejection.dart';
+import 'package:finapp/screen/salesExecutiveScreen/loanScreens/bike_loan_screen.dart';
+import 'package:finapp/screen/salesExecutiveScreen/loanScreens/car_loan_screen.dart';
+import 'package:finapp/screen/salesExecutiveScreen/loanScreens/gold_loan_screen.dart';
+import 'package:finapp/screen/salesExecutiveScreen/loanScreens/prorerty_loan_screen.dart';
+import 'package:finapp/screen/salesExecutiveScreen/profile/sales_executive_profile_edit.dart';
+import 'package:finapp/screen/salesExecutiveScreen/sales_executive_home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import '../../index.dart';
 
@@ -93,7 +98,7 @@ class Routes {
           maintainState: false,
           builder: (context) => const RelationPage(),
         );
-        // admin
+      // admin
       case RoutesName.adminHomeScreen:
         return CupertinoPageRoute(
           maintainState: false,
@@ -154,16 +159,11 @@ class Routes {
           maintainState: false,
           builder: (context) => const OneUserLoan(),
         );
-        //ANCHOR - Manager
+      //ANCHOR - Manager
       case RoutesName.managerdashboard:
         return CupertinoPageRoute(
           maintainState: false,
           builder: (context) => const ManagerDashboardPage(),
-        );
-      case RoutesName.managerProfile:
-        return CupertinoPageRoute(
-          maintainState: false,
-          builder: (context) => const ManagerProfle(),
         );
       case RoutesName.managereditprofile:
         return CupertinoPageRoute(
@@ -205,6 +205,40 @@ class Routes {
           maintainState: false,
           builder: (context) => const ManagerHomePage(),
         );
+      // ANCHOR - Sales Executive
+
+      case RoutesName.salesExecutiveHomeScreen:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const SalesExecutiveHomePage(),
+        );
+      case RoutesName.salesExecutiveeditprofile:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const SalesExecutiveEditProfile(),
+        );
+      case RoutesName.propertyLoanApplicationOfUser:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const PropertyLoanPage(),
+        );
+      case RoutesName.bikeLoanApplicationOfUser:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const BikeLoanPage(),
+        );
+      case RoutesName.carLoanApplicationOfUser:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const CarLoanPage(),
+        );
+      case RoutesName.goldLoanApplicationOfUser:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const GoldLoanPage(),
+        );
+      
+      
 
       default:
         return CupertinoPageRoute(

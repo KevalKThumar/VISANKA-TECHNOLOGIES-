@@ -16,7 +16,7 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   @override
   void initState() {
-    MainApp.userType = "Manager";
+    MainApp.userType = "SalesExecutive";
     super.initState();
   }
 
@@ -46,7 +46,9 @@ class _MainAppState extends State<MainApp> {
             ? RoutesName.adminHomeScreen
             : MainApp.userType == "Manager"
                 ? RoutesName.managerHomeScreen
-                : RoutesName.home,
+                : MainApp.userType == "SalesExecutive"
+                    ? RoutesName.salesExecutiveHomeScreen
+                    : RoutesName.home,
         onGenerateRoute: Routes.onGenerateRoute,
       ),
     );

@@ -50,7 +50,6 @@ class RoutesName {
   static const String managerLogin = 'managerLogin';
   static const String managerHomeScreen = 'managerHomeScreen';
   static const String managerdashboard = 'managerdashboard';
-  static const String managerProfile = 'managerProfile';
   static const String managereditprofile = 'managereditprofile';
   static const String salesExecutiveManageUser = 'salesExecutiveManageUser';
   static const String salesExecutiveAdd = 'salesExecutiveAdd';
@@ -61,10 +60,12 @@ class RoutesName {
   static const String applideUserListScreen = 'applideUserListScreen';
   static const String approveOrRejectScreen = 'approveOrRejectScreen';
 
-  
-
-
-  
-
+  // SalesExecutive screen
+  static const String salesExecutiveHomeScreen = 'salesExecutiveHomeScreen';
+  static const String salesExecutiveeditprofile = 'salesExecutiveeditprofile';
+  static const String carLoanApplicationOfUser = 'carLoanApplicationOfUser';
+  static const String bikeLoanApplicationOfUser = 'bikeLoanApplicationOfUser';
+  static const String propertyLoanApplicationOfUser = 'propertyLoanApplicationOfUser';
+  static const String goldLoanApplicationOfUser = 'goldLoanApplicationOfUser';
   
 }

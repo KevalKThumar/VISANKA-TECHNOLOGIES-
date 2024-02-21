@@ -22,4 +22,22 @@ class DashBoard {
       routeName: RoutesName.applideUserListScreen,
     ),
   ];
+  static final List<AdminDashBoard> salesExecutiveLoanList = [
+    AdminDashBoard(
+      name: "Car Loan",
+      routeName: RoutesName.carLoanApplicationOfUser,
+    ),
+    AdminDashBoard(
+      name: "property Loan",
+      routeName: RoutesName.propertyLoanApplicationOfUser,
+    ),
+    AdminDashBoard(
+      name: "Bike Loan",
+      routeName: RoutesName.bikeLoanApplicationOfUser,
+    ),
+    AdminDashBoard(
+      name: "Gold Loan",
+      routeName: RoutesName.goldLoanApplicationOfUser,
+    ),
+  ];
 }

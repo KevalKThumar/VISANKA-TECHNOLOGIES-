@@ -80,4 +80,5 @@ export 'package:finapp/constant/products.dart';
 export 'package:finapp/constant/offers.dart';
 export 'package:finapp/constant/rating.dart';
 export 'package:finapp/constant/vehicles.dart';
+export 'package:finapp/constant/dashboard.dart';
 

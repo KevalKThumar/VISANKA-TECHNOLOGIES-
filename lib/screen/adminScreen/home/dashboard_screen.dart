@@ -1,4 +1,4 @@
-import 'package:finapp/constant/admin_dashboard.dart';
+import 'package:finapp/constant/dashboard.dart';
 import 'package:finapp/index.dart';
 
 class DashboardPage extends StatelessWidget {
