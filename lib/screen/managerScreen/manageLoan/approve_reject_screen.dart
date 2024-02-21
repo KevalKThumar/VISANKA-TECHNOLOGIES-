@@ -8,7 +8,7 @@ class ApproveReject extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const TextWidget(
-          title: "Applied User List Manager",
+          title: "Loan Details",
           fontSize: 24,
           fontWeight: FontWeight.w600,
           color: Colors.white,
@@ -37,31 +37,144 @@ class ApproveReject extends StatelessWidget {
           size: 24,
         ),
       ),
-      body: Column(children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8),
-          child: Row(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_rounded,
+                    color: FinappColor.textColor,
+                    size: 30,
+                  ),
+                ),
+                const TextWidget(
+                  title: "Loan details",
+                  fontSize: 21,
+                  fontWeight: FontWeight.w600,
+                )
+              ],
+            ),
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  Icons.arrow_back_rounded,
-                  color: FinappColor.textColor,
-                  size: 30,
+              SizedBox(width: 20),
+
+              // Logo
+              CircleAvatar(
+                radius: 50,
+                backgroundColor: FinappColor.userDpColor,
+                child: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                  size: 70,
                 ),
               ),
-              const TextWidget(
-                title: "Loan details",
-                fontSize: 21,
-                fontWeight: FontWeight.w600,
-              )
+              SizedBox(width: 30),
+
+              // title
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // name of sender / receiver
+                  TextWidget(
+                    title: "Keval",
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  // id
+                  TextWidget(
+                    title: "Loan Id:- 12345",
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ],
+              ),
+              // Price
             ],
           ),
-        ),
-        //
-      ]),
+
+          // name
+
+          const SizedBox(height: 20),
+
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 2),
+            child: TextNumberRow(
+              left: "Loan Amount:-",
+              right: "Rs. 1000",
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 2),
+            child: TextNumberRow(
+              left: "Duration:-",
+              right: "3 year",
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 2),
+            child: TextNumberRow(
+              left: "Security:-",
+              right: "Gold",
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 2),
+            child: TextNumberRow(
+              left: "Rate:-",
+              right: "12%",
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 2),
+            child: TextNumberRow(
+              left: "Start Date:-",
+              right: "16-02-2024",
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 2),
+            child: TextNumberRow(
+              left: "End Date:-",
+              right: "11-03-2024",
+            ),
+          ),
+
+          const SizedBox(
+            height: 15,
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              elevatedButton(
+                backgroundColor: FinappColor.successColor,
+                "Approve",
+                () {},
+                MediaQuery.of(context).size.width * 0.4,
+                50,
+                Colors.white,
+              ),
+              elevatedButton(
+                "Reject",
+                () {},
+                MediaQuery.of(context).size.width * 0.4,
+                50,
+                Colors.white,
+                backgroundColor: FinappColor.errorColor,
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }

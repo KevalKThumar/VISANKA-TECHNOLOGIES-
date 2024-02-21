@@ -43,7 +43,7 @@ class _ManagerAddSalesExecutiveState extends State<ManagerAddSalesExecutive> {
     return Scaffold(
       appBar: AppBar(
         title: const TextWidget(
-          title: "Sales Executive Manager",
+          title: "Sales Executive",
           fontSize: 24,
           fontWeight: FontWeight.w600,
           color: Colors.white,

@@ -1,14 +1,8 @@
 
-import 'package:finapp/screen/managerScreen/addRemoveSalesExe/detail_salesexe_screen.dart';
-import 'package:finapp/screen/managerScreen/addRemoveSalesExe/list_salesexe_screen.dart';
-import 'package:finapp/screen/managerScreen/manageLoan/applied_user_list_screen.dart';
-import 'package:finapp/screen/managerScreen/manageLoan/approve_reject_screen.dart';
-import 'package:finapp/screen/managerScreen/manager_home_page.dart';
-import 'package:finapp/screen/managerScreen/profile/manager_edit_profile_screen.dart';
-import 'package:finapp/screen/managerScreen/user/remove_restrict_user.dart';
+
+import 'package:finapp/screen/managerScreen/home/dashboard_screen.dart';
 import 'package:flutter/cupertino.dart';
 import '../../index.dart';
-import '../screen/managerScreen/home/dashboard_screen.dart';
 
 class Routes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {

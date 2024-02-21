@@ -13,6 +13,13 @@ export 'package:finapp/model/vehicles_model.dart';
 
 // screen
 export 'package:finapp/main.dart';
+export 'package:finapp/screen/managerScreen/addRemoveSalesExe/detail_salesexe_screen.dart';
+export 'package:finapp/screen/managerScreen/addRemoveSalesExe/list_salesexe_screen.dart';
+export 'package:finapp/screen/managerScreen/manageLoan/applied_user_list_screen.dart';
+export 'package:finapp/screen/managerScreen/manageLoan/approve_reject_screen.dart';
+export 'package:finapp/screen/managerScreen/manager_home_page.dart';
+export 'package:finapp/screen/managerScreen/profile/manager_edit_profile_screen.dart';
+export 'package:finapp/screen/managerScreen/user/remove_restrict_user.dart';
 export 'package:finapp/screen/adminScreen/home/dashboard_screen.dart';
 export 'package:finapp/screen/adminScreen/loanapprove/loan_approve_screen.dart';
 export 'package:finapp/screen/adminScreen/manageusers/manager/manage_manager_screen.dart';
