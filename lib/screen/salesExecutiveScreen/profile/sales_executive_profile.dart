@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:finapp/index.dart';
+import 'package:finapp/viewModel/image_picker.dart';
 
 class SalesExecutiveProfle extends StatelessWidget {
   const SalesExecutiveProfle({super.key});
@@ -24,10 +27,20 @@ class SalesExecutiveProfle extends StatelessWidget {
 
             // Row For user name and details
 
-            const CircleAvatar(
-              radius: 60,
-              backgroundColor: FinappColor.userDpColor,
-              child: Icon(Icons.person, size: 90, color: Colors.white),
+            Consumer<ImagePickerProvider>(
+              builder: (context, value, child) {
+                return CircleAvatar(
+                  radius: 60,
+                  backgroundColor: FinappColor.userDpColor,
+                  child: value.image == ""
+                      ? const Icon(Icons.person, size: 90, color: Colors.white)
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child:
+                              Image.file(File(value.image), fit: BoxFit.fill),
+                        ),
+                );
+              },
             ),
             // Column
             Padding(
@@ -134,7 +147,8 @@ class SalesExecutiveProfle extends StatelessWidget {
             elevatedButton(
               "Edit Profile",
               () {
-                Navigator.pushNamed(context, RoutesName.salesExecutiveeditprofile);
+                Navigator.pushNamed(
+                    context, RoutesName.salesExecutiveeditprofile);
               },
               MediaQuery.of(context).size.width - 70,
               40,

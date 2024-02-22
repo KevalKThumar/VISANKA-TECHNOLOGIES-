@@ -19,7 +19,7 @@ class LoanApprovelPage extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamed(
                       context,
-                      RoutesName.approveOrRejectScreen,
+                      RoutesName.approveDetails,
                     );
                   },
                   title: const Text(

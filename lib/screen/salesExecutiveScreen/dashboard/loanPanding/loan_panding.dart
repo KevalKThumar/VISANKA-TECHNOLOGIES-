@@ -19,7 +19,7 @@ class LoanPanding extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamed(
                       context,
-                      RoutesName.approveOrRejectScreen,
+                      RoutesName.pandingDetails,
                     );
                   },
                   title: const Text(

@@ -1,5 +1,6 @@
 import 'package:finapp/index.dart';
 import 'package:finapp/routes/routes.dart';
+import 'package:finapp/viewModel/image_picker.dart';
 
 void main() {
   runApp(const MainApp());
@@ -27,6 +28,8 @@ class _MainAppState extends State<MainApp> {
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => RegisterProvider()),
         ChangeNotifierProvider(create: (_) => BottomNavBarProvider()),
+        ChangeNotifierProvider(create: (_) => ImagePickerProvider()),
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

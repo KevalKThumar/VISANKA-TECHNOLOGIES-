@@ -2,6 +2,9 @@
 export 'package:flutter/material.dart';
 export 'package:provider/provider.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
+export 'dart:io';
+export 'package:image_cropper/image_cropper.dart';
+export 'package:image_picker/image_picker.dart';
 // utils
 export 'package:finapp/routes/routes_name.dart';
 export 'package:finapp/viewModel/login_provider.dart';
@@ -10,16 +13,20 @@ export 'package:finapp/viewModel/bottom_navbar.dart';
 export 'package:finapp/model/product_icon_model.dart';
 export 'package:finapp/model/home_button_model.dart';
 export 'package:finapp/model/vehicles_model.dart';
+export 'package:finapp/viewModel/image_picker.dart';
 
 // screen
 export 'package:finapp/main.dart';
+// manager
 export 'package:finapp/screen/managerScreen/addRemoveSalesExe/detail_salesexe_screen.dart';
 export 'package:finapp/screen/managerScreen/addRemoveSalesExe/list_salesexe_screen.dart';
 export 'package:finapp/screen/managerScreen/manageLoan/applied_user_list_screen.dart';
 export 'package:finapp/screen/managerScreen/manageLoan/approve_reject_screen.dart';
 export 'package:finapp/screen/managerScreen/manager_home_page.dart';
+export 'package:finapp/screen/managerScreen/profile/manager_profile_screen.dart';
 export 'package:finapp/screen/managerScreen/profile/manager_edit_profile_screen.dart';
 export 'package:finapp/screen/managerScreen/user/remove_restrict_user.dart';
+// admin
 export 'package:finapp/screen/adminScreen/home/dashboard_screen.dart';
 export 'package:finapp/screen/adminScreen/loanapprove/loan_approve_screen.dart';
 export 'package:finapp/screen/adminScreen/manageusers/manager/manage_manager_screen.dart';
@@ -32,8 +39,11 @@ export 'package:finapp/screen/adminScreen/profile/admin_profile_screen.dart';
 export 'package:finapp/screen/adminScreen/manageusers/user/manage_user_screen.dart';
 export 'package:finapp/screen/adminScreen/admin_home_screen.dart';
 export 'package:finapp/screen/adminScreen/manageusers/user/admin_add_user.dart';
+export 'package:finapp/screen/adminScreen/loanapprove/loan_details_screen.dart';
+export 'package:finapp/screen/adminScreen/loanapprove/one_user_loan_screen.dart';
 export 'package:finapp/screen/adminScreen/manageusers/user/remove_restrict_user.dart';
 export 'package:finapp/screen/adminScreen/profile/admin_edit_profile.dart';
+// user
 export 'package:finapp/screen/userScreen/Login/login_screen.dart';
 export 'package:finapp/screen/userScreen/OTP/get_started_page.dart';
 export 'package:finapp/screen/userScreen/Register/register_screen.dart';
@@ -57,9 +67,16 @@ export 'package:finapp/screen/userScreen/Home/insurance/general_insurance.dart';
 export 'package:finapp/screen/userScreen/Home/insurance/insurance_screen.dart';
 export 'package:finapp/screen/userScreen/Home/lifestyle_screen.dart';
 export 'package:finapp/screen/userScreen/Home/vehicles_scrren.dart';
-export 'package:finapp/screen/adminScreen/loanapprove/loan_details_screen.dart';
-export 'package:finapp/screen/adminScreen/loanapprove/one_user_loan_screen.dart';
-export '../screen/managerScreen/profile/manager_profile_screen.dart';
+// sales executive
+export 'package:finapp/screen/salesExecutiveScreen/loanScreens/bike_loan_screen.dart';
+export 'package:finapp/screen/salesExecutiveScreen/loanScreens/car_loan_screen.dart';
+export 'package:finapp/screen/salesExecutiveScreen/loanScreens/gold_loan_screen.dart';
+export 'package:finapp/screen/salesExecutiveScreen/loanScreens/prorerty_loan_screen.dart';
+export 'package:finapp/screen/salesExecutiveScreen/dashboard/loanApprovel/loan_approvel_details.dart';
+export 'package:finapp/screen/salesExecutiveScreen/dashboard/loanPanding/loan_panding_details.dart';
+export 'package:finapp/screen/salesExecutiveScreen/dashboard/loanRejection/loan_rejection_details.dart';
+export 'package:finapp/screen/salesExecutiveScreen/profile/sales_executive_profile_edit.dart';
+export 'package:finapp/screen/salesExecutiveScreen/sales_executive_home_screen.dart';
 
 // widget
 export 'package:finapp/widget/text_filds.dart';
@@ -71,7 +88,7 @@ export 'package:finapp/widget/post_card.dart';
 export 'package:finapp/widget/top_button.dart';
 export 'package:finapp/widget/emi_show_container.dart';    
 export 'package:finapp/widget/text_number_row.dart';    
-
+export 'package:finapp/widget/loding_page.dart';
 // constant
 export 'package:finapp/constant/colors.dart';
 export 'package:finapp/constant/homeicons.dart';

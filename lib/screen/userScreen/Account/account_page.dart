@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-
 import '../../../index.dart';
 
 class AccountPage extends StatelessWidget {
@@ -35,10 +34,21 @@ class AccountPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 // circular image
-                CircleAvatar(
-                  radius: 60,
-                  backgroundColor: FinappColor.userDpColor,
-                  child: Icon(Icons.person, size: 90, color: Colors.white),
+                Consumer<ImagePickerProvider>(
+                  builder: (context, value, child) {
+                    return CircleAvatar(
+                      radius: 60,
+                      backgroundColor: FinappColor.userDpColor,
+                      child: value.image == ""
+                          ? const Icon(Icons.person,
+                              size: 90, color: Colors.white)
+                          : ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: Image.file(File(value.image),
+                                  fit: BoxFit.fill),
+                            ),
+                    );
+                  },
                 ),
                 // Column
                 Column(

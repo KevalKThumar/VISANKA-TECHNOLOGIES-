@@ -1,11 +1,4 @@
 import 'package:finapp/screen/managerScreen/home/dashboard_screen.dart';
-import 'package:finapp/screen/salesExecutiveScreen/dashboard/loanRejection/loan_rejection.dart';
-import 'package:finapp/screen/salesExecutiveScreen/loanScreens/bike_loan_screen.dart';
-import 'package:finapp/screen/salesExecutiveScreen/loanScreens/car_loan_screen.dart';
-import 'package:finapp/screen/salesExecutiveScreen/loanScreens/gold_loan_screen.dart';
-import 'package:finapp/screen/salesExecutiveScreen/loanScreens/prorerty_loan_screen.dart';
-import 'package:finapp/screen/salesExecutiveScreen/profile/sales_executive_profile_edit.dart';
-import 'package:finapp/screen/salesExecutiveScreen/sales_executive_home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import '../../index.dart';
 
@@ -212,6 +205,21 @@ class Routes {
           maintainState: false,
           builder: (context) => const SalesExecutiveHomePage(),
         );
+      case RoutesName.rejectionDetails:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const RejectionDetails(),
+        );
+      case RoutesName.approveDetails:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const ApproveDetails(),
+        );
+      case RoutesName.pandingDetails:
+        return CupertinoPageRoute(
+          maintainState: false,
+          builder: (context) => const PandingDetails(),
+        );
       case RoutesName.salesExecutiveeditprofile:
         return CupertinoPageRoute(
           maintainState: false,
@@ -237,8 +245,6 @@ class Routes {
           maintainState: false,
           builder: (context) => const GoldLoanPage(),
         );
-      
-      
 
       default:
         return CupertinoPageRoute(
@@ -246,7 +252,8 @@ class Routes {
           builder: (context) {
             return Scaffold(
               appBar: AppBar(
-                title: const Text('Error'),
+                title: const Text('404 Page Not Found'),
+                centerTitle: true,
               ),
               body: Center(
                 child: Column(
@@ -258,7 +265,11 @@ class Routes {
                         context,
                         MainApp.userType == "admin"
                             ? RoutesName.adminHomeScreen
-                            : RoutesName.home,
+                            : MainApp.userType == "Manager"
+                                ? RoutesName.managerHomeScreen
+                                : MainApp.userType == "SalesExecutive"
+                                    ? RoutesName.salesExecutiveHomeScreen
+                                    : RoutesName.home,
                       );
                     }, Colors.red)
                   ],

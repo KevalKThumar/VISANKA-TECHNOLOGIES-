@@ -1,10 +1,14 @@
+import 'dart:developer';
+
 import 'package:finapp/index.dart';
+
 
 class SalesExecutiveEditProfile extends StatefulWidget {
   const SalesExecutiveEditProfile({super.key});
 
   @override
-  State<SalesExecutiveEditProfile> createState() => _SalesExecutiveEditProfileState();
+  State<SalesExecutiveEditProfile> createState() =>
+      _SalesExecutiveEditProfileState();
 }
 
 class _SalesExecutiveEditProfileState extends State<SalesExecutiveEditProfile> {
@@ -42,7 +46,7 @@ class _SalesExecutiveEditProfileState extends State<SalesExecutiveEditProfile> {
     return Scaffold(
       appBar: AppBar(
         title: const TextWidget(
-          title: "Edit Profile",
+          title: "Edit Profile sales executive",
           fontSize: 24,
           fontWeight: FontWeight.w600,
           color: Colors.white,
@@ -68,7 +72,7 @@ class _SalesExecutiveEditProfileState extends State<SalesExecutiveEditProfile> {
         leading: const Icon(
           Icons.menu,
           color: Colors.white,
-          size: 24,
+          size: 24, 
         ),
       ),
       body: SingleChildScrollView(
@@ -99,12 +103,55 @@ class _SalesExecutiveEditProfileState extends State<SalesExecutiveEditProfile> {
             ),
 
             // logo
-            const Center(
-              child: CircleAvatar(
-                radius: 60,
-                backgroundColor: FinappColor.userDpColor,
-                child: Icon(Icons.person, size: 90, color: Colors.white),
-              ),
+            Consumer<ImagePickerProvider>(
+              builder: (context, value, child) {
+                return Center(
+                  child: GestureDetector(
+                    onTap: () async {
+                      final ImagePicker imagePicker = ImagePicker();
+                      final ImageCropper imageCropper = ImageCropper();
+                      final XFile? images = await imagePicker.pickImage(
+                        source: ImageSource.gallery,
+                        imageQuality: 70,
+                      );
+                      log(images!.path);
+                      final croppedImage = await imageCropper.cropImage(
+                        sourcePath: images.path,
+                        compressFormat: ImageCompressFormat.png,
+                        compressQuality: 70,
+                        uiSettings: [
+                          AndroidUiSettings(
+                            toolbarTitle: 'Cropper',
+                            toolbarColor: FinappColor.appBarColor,
+                            toolbarWidgetColor: Colors.white,
+                            initAspectRatio: CropAspectRatioPreset.square,
+                            lockAspectRatio: false,
+                          ),
+                          IOSUiSettings(
+                            title: 'Cropper',
+                          ),
+                        ],
+                      );
+                    value.changeImage(croppedImage!.path);
+                                        },
+                    child: CircleAvatar(
+                        radius: 60,
+                        backgroundColor: value.image == ""
+                            ? FinappColor.userDpColor
+                            : Colors.grey[200],
+                        child: value.image == ""
+                            ? const Icon(Icons.person,
+                                size: 90, color: Colors.white)
+                            : ClipRRect(
+                                borderRadius: BorderRadius.circular(100),
+                                child: Image.file(
+                                  File(value.image),
+                                  fit: BoxFit.fill,
+                                ),
+                              )),
+                  ),
+                );
+              },
             ),
 
             const SizedBox(height: 10),

@@ -63,6 +63,10 @@ class RoutesName {
   // SalesExecutive screen
   static const String salesExecutiveHomeScreen = 'salesExecutiveHomeScreen';
   static const String salesExecutiveeditprofile = 'salesExecutiveeditprofile';
+  static const String approveDetails = 'approveDetails';
+  static const String pandingDetails = 'pandingDetails';
+  static const String rejectionDetails = 'rejectionDetails';
+
   static const String carLoanApplicationOfUser = 'carLoanApplicationOfUser';
   static const String bikeLoanApplicationOfUser = 'bikeLoanApplicationOfUser';
   static const String propertyLoanApplicationOfUser = 'propertyLoanApplicationOfUser';

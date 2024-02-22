@@ -1,6 +1,7 @@
 import 'package:finapp/screen/managerScreen/home/dashboard_screen.dart';
 import 'package:finapp/screen/salesExecutiveScreen/dashboard/dashboard_screen.dart';
 import 'package:finapp/screen/salesExecutiveScreen/loanScreens/loan_screen.dart';
+import 'package:finapp/screen/salesExecutiveScreen/profile/sales_executive_profile.dart';
 
 import '../../index.dart';
 
@@ -23,7 +24,7 @@ class _SalesExecutiveHomePageState extends State<SalesExecutiveHomePage> {
     // loans application approval
     const LoanScreen(),
     // admin profile
-    const ManagerProfle(),
+    const SalesExecutiveProfle(),
   ];
   final List pageTitle = [
     // dashboard
