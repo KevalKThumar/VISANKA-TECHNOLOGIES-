@@ -172,7 +172,16 @@ class _AdminAddSalesExecutiveState extends State<AdminAddSalesExecutive> {
 
               elevatedButton(
                 'Add Sales Executive',
-                () {},
+                () {
+                  checkValidation(
+                    context: context,
+                  email: emailController.text,
+                  password: passwordController.text,
+                  confirmpassword: confirmPasswordController.text,
+                  mobile: mobileNumberController.text,
+                  fullName: fullNameController.text,
+                  );
+                },
                 MediaQuery.of(context).size.width - 70,
                 45,
                 Colors.white,

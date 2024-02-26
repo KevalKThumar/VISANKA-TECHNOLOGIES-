@@ -10,12 +10,14 @@ class MyTextFormField extends StatelessWidget {
     required this.currentFocusNode,
     this.nextFocusNode,
     this.isPassWord = false,
+    this.textLength = 99999,
     required this.keyboardType,
   });
 
   final TextEditingController controller;
   final FocusNode currentFocusNode;
   final FocusNode? nextFocusNode;
+  final int textLength;
   final String hintText;
   final String lable;
   final IconData icon;
@@ -29,10 +31,13 @@ class MyTextFormField extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 4.0),
         child: TextFormField(
+          maxLength: textLength,
+          obscureText: isPassWord,
           keyboardType: keyboardType,
           controller: controller,
           focusNode: currentFocusNode,
           decoration: InputDecoration(
+            counterText: "",
             focusedBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(14),
@@ -69,9 +74,6 @@ class MyTextFormField extends StatelessWidget {
               return 'Please enter some text';
             }
             return null;
-          },
-          onChanged: (value) {
-            controller.text = value;
           },
           onFieldSubmitted: (value) {
             currentFocusNode.unfocus();

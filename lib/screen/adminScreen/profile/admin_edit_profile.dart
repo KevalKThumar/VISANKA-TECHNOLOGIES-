@@ -213,7 +213,16 @@ class _AdminEditProfileState extends State<AdminEditProfile> {
 
             elevatedButton(
               'Confirm Changes',
-              () {},
+              () {
+                checkValidation(
+                context: context,
+                  email: emailController.text,
+                  password: passwordController.text,
+                  confirmpassword: confirmPasswordController.text,
+                  mobile: mobileNumberController.text,
+                  fullName: fullNameController.text,
+                );
+              },
               MediaQuery.of(context).size.width - 70,
               45,
               Colors.white,

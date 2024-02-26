@@ -50,11 +50,9 @@ class _AccountEditPageState extends State<AccountEditPage> {
               padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8),
               child: Row(
                 children: [
-                  
                   IconButton(
                     onPressed: () {
-                      Navigator.popAndPushNamed(
-                          context, RoutesName.account);
+                      Navigator.popAndPushNamed(context, RoutesName.account);
                     },
                     icon: const Icon(
                       Icons.arrow_back_rounded,
@@ -72,7 +70,7 @@ class _AccountEditPageState extends State<AccountEditPage> {
             ),
 
             // logo
-          Consumer<ImagePickerProvider>(
+            Consumer<ImagePickerProvider>(
               builder: (context, value, child) {
                 return Center(
                   child: GestureDetector(
@@ -83,7 +81,7 @@ class _AccountEditPageState extends State<AccountEditPage> {
                         source: ImageSource.gallery,
                         imageQuality: 70,
                       );
-                      
+
                       final croppedImage = await imageCropper.cropImage(
                         sourcePath: images!.path,
                         compressFormat: ImageCompressFormat.png,
@@ -187,7 +185,16 @@ class _AccountEditPageState extends State<AccountEditPage> {
 
             elevatedButton(
               'Confirm Changes',
-              () {},
+              () {
+                checkValidation(
+                  context: context,
+                  email: emailController.text,
+                  password: passwordController.text,
+                  confirmpassword: confirmPasswordController.text,
+                  mobile: mobileNumberController.text,
+                  fullName: fullNameController.text,
+                );
+              },
               MediaQuery.of(context).size.width - 70,
               45,
               Colors.white,

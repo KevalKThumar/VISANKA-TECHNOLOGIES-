@@ -43,6 +43,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: SizedBox(),
         title: const TextWidget(
           title: "Registration",
           fontSize: 24,
@@ -64,7 +65,7 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
             children: [
               // logo
-              assetImage('image/register/IllustrationRegister.png', 200),
+              assetImage('image/register/IllustrationRegister.png', 170),
               //  Register an account!
 
               const TextWidget(
@@ -105,6 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 currentFocusNode: mobileNumberFocusNode,
                 nextFocusNode: passwordFocusNode,
                 keyboardType: TextInputType.phone,
+                textLength: 10,
               ),
 
               // password
@@ -164,11 +166,38 @@ class _RegisterPageState extends State<RegisterPage> {
 
               elevatedButton(
                 'Sign Up',
-                () {},
+                () {
+                  checkValidation(
+                    context: context,
+                    email: emailController.text,
+                    password: passwordController.text,
+                    confirmpassword: confirmPasswordController.text,
+                    mobile: mobileNumberController.text,
+                    fullName: fullNameController.text,
+                    nextRoute: RoutesName.login,
+                  );
+                },
                 MediaQuery.of(context).size.width - 70,
                 50,
                 Colors.white,
-              )
+              ),
+
+              const SizedBox(height: 5),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const TextWidget(
+                    fontSize: 13,
+                    fontWeight: FontWeight.normal,
+                    title: "Already have an account?",
+                    color: FinappColor.textfieldBorderColor,
+                  ),
+                  textButton("Sign In", () {
+                    Navigator.pushNamed(context, RoutesName.login);
+                  }, FinappColor.textfieldBorderColor)
+                ],
+              ),
             ],
           ),
         ),

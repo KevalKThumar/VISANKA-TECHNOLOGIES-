@@ -98,7 +98,7 @@ class AccountPage extends StatelessWidget {
                     ),
                     // Editprofile text button navigat to Editprofile page
                     textButton("Edit Profile", () {
-                      Navigator.pushReplacementNamed(
+                      Navigator.pushNamed(
                           context, RoutesName.editProfile);
                     }, Colors.blue),
                   ],

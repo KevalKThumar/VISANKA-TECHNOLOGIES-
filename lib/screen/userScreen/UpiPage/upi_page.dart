@@ -12,6 +12,7 @@ class UpiPage extends StatefulWidget {
 class _UpiPageState extends State<UpiPage> {
   TextEditingController amountController = TextEditingController();
   FocusNode amountFocusNode = FocusNode();
+  TextEditingController noteController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)!.settings.arguments as PaymentArgument;
@@ -48,11 +49,12 @@ class _UpiPageState extends State<UpiPage> {
 
               SizedBox(height: 120),
 
-              Container(
-                padding: EdgeInsets.only(left: 12),
-                height: 100,
+              Align(
+                alignment: Alignment.center,
                 child: TextFormField(
                   textAlignVertical: TextAlignVertical.center,
+                  textAlign: TextAlign.start,
+                  maxLines: 1,
                   controller: amountController,
                   focusNode: amountFocusNode,
                   keyboardType: TextInputType.number,
@@ -62,14 +64,15 @@ class _UpiPageState extends State<UpiPage> {
                     if (value.length == 6) {
                       amountFocusNode.unfocus();
                     }
-                    amountController.text = value;
                   },
-                  textAlign: TextAlign.left,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 50,
                       fontWeight: FontWeight.bold),
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.34,
+                    ),
                     prefix: Text(
                       "₹ ",
                       style: TextStyle(
@@ -84,24 +87,6 @@ class _UpiPageState extends State<UpiPage> {
                         fontSize: 50,
                         fontWeight: FontWeight.bold),
                     counterText: '',
-                    contentPadding: EdgeInsets.only(
-                      left: amountController.text.isEmpty
-                          ? 120
-                          : amountController.text.length == 1
-                              ? 120
-                              : amountController.text.length == 2
-                                  ? 120
-                                  : amountController.text.length == 3
-                                      ? 110
-                                      : amountController.text.length == 4
-                                          ? 100
-                                          : amountController.text.length == 5
-                                              ? 90
-                                              : amountController.text.length ==
-                                                      6
-                                                  ? 80
-                                                  : 0,
-                    ),
                   ),
                 ),
               ),
@@ -153,7 +138,8 @@ class _UpiPageState extends State<UpiPage> {
                       showModalBottomSheet(
                         context: context,
                         builder: (context) {
-                          return amountController.text.isNotEmpty
+                          return amountController.text.isNotEmpty &&
+                                  amountController.text.length == 6
                               ? Container(
                                   height:
                                       MediaQuery.of(context).size.height * 0.5,
@@ -168,7 +154,7 @@ class _UpiPageState extends State<UpiPage> {
                                     children: [
                                       SizedBox(height: 5),
                                       assetImage('image/bill/Base.png', 4),
-                                      SizedBox(height: 40),
+                                      SizedBox(height: 30),
                                       TextWidget(
                                         title: args.name,
                                         fontSize: 30,
@@ -298,6 +284,9 @@ class _UpiPageState extends State<UpiPage> {
                                           OutlinedButton(
                                             onPressed: () {
                                               Navigator.pop(context);
+                                              setState(() {
+                                                amountController.text = "";
+                                              });
                                             },
                                             style: OutlinedButton.styleFrom(
                                                 shape:
@@ -308,12 +297,12 @@ class _UpiPageState extends State<UpiPage> {
                                                   ),
                                                 ),
                                                 side: BorderSide(
-                                                  color: FinappColor.errorColor ,
+                                                  color: FinappColor.errorColor,
                                                 )),
                                             child: Text(
                                               "Try Again",
                                               style: TextStyle(
-                                                color: FinappColor.errorColor ,
+                                                color: FinappColor.errorColor,
                                                 fontSize: 20,
                                               ),
                                             ),

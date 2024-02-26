@@ -27,13 +27,14 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(
-                    HomeIcons.bill.length,
-                    (index) => topButton(
-                          image: HomeIcons.home[index].image,
-                          name: HomeIcons.home[index].name,
-                          routeName: HomeIcons.home[index].routeName!,
-                          context: context,
-                        )),
+                  HomeIcons.bill.length,
+                  (index) => topButton(
+                    image: HomeIcons.home[index].image,
+                    name: HomeIcons.home[index].name,
+                    routeName: HomeIcons.home[index].routeName!,
+                    context: context,
+                  ),
+                ),
               ),
             ),
             // upi and card
@@ -147,6 +148,44 @@ class _HomePageState extends State<HomePage> {
 
             // Recent Relations
 
+            EmiCountWidget(
+              image: 'image/home/Loan.png',
+              nameOfRelation: "Local - Printer",
+              id: "123ABC456DEF78",
+              totlaAmount: 100000,
+              emiAmount: 10000,
+              totalPaidAmount: 50000,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesName.upipage,
+                  arguments: PaymentArgument(
+                    100000 - 50000,
+                    "Local - Printer",
+                    "123ABC456DEF78",
+                  ),
+                );
+              },
+            ),
+            EmiCountWidget(
+              image: 'image/home/Loan.png',
+              nameOfRelation: "Local - Printer",
+              id: "123ABC456DEF78",
+              totlaAmount: 100000,
+              emiAmount: 10000,
+              totalPaidAmount: 50000,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesName.upipage,
+                  arguments: PaymentArgument(
+                    100000 - 50000,
+                    "Local - Printer",
+                    "123ABC456DEF78",
+                  ),
+                );
+              },
+            ),
             EmiCountWidget(
               image: 'image/home/Loan.png',
               nameOfRelation: "Local - Printer",

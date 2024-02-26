@@ -26,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const SizedBox(),
         title: const TextWidget(
           title: "Login",
           fontSize: 24,
@@ -121,13 +122,23 @@ class _LoginScreenState extends State<LoginScreen> {
 
               elevatedButton(
                 "Login",
-                () {},
+                () {
+                  checkValidation(
+                    context: context,
+                    email: emailController.text,
+                    password: passwordController.text,
+                    fullName: emailController.text,
+                    mobile: emailController.text,
+                    confirmpassword: passwordController.text,
+                    nextRoute: RoutesName.home
+                  );
+                },
                 MediaQuery.of(context).size.width - 50,
                 49,
                 Colors.white,
               ),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
 
               const Text(
                 'Or Login with',
@@ -139,7 +150,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
               // Login with Google or phone
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -172,7 +183,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     title: "You Don't have an account ?",
                     color: FinappColor.textfieldBorderColor,
                   ),
-                  textButton("Sign up", () {}, FinappColor.textfieldBorderColor)
+                  textButton("Sign up", () {
+                    Navigator.pushNamed(context, RoutesName.register);
+                  }, FinappColor.textfieldBorderColor)
                 ],
               ),
 
